@@ -18,16 +18,17 @@ body {
     //     padding: 25px 10px;
     // }
 
-    h1{
+    h4{
         border: 3px solid #eee;
         text-align: center;
+        color: rgb(102, 102, 102);
     }
 
     .contents {
         border: 3px solid #eee;
 
         .map-container{
-            border: 3px solid #ccc;
+            border: 1px solid #ccc;
             background: #eee;
             width: 100vw;
             height: 50vh;
@@ -39,12 +40,13 @@ body {
         }
 
         .trending-container{
-            border: 3px solid #ccc;
-
+            border: 1px solid #ccc;
+            text-align: center;
         }
 
         .recommend-container{
-            border: 3px solid #ccc;
+            border: 1px solid #ccc;
+            text-align: center;
         }
     }
 }

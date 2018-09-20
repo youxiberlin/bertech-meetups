@@ -10,54 +10,30 @@ class Upcoming extends Component {
     this.state = {
       meetups: []
     }
+
+    this._updateLi = this._updateLi.bind(this)
   }
 
   componentDidMount() {
-    this.setState({
-      //display 8 el
-    })
+    this._firstList()
   }
 
-  // moreList = () => {
-  //   this.setState({
-  //       //display more 8
-  //   })
-  // }
-
   render() {
-    // console.log("Upcoming: ", this.props.meetups)
-    console.log("Upcoming: this.state", this.state)
+    console.log("Upcoming, this.props.meetups: ", this.props.meetups)
+    console.log("Upcoming, this.state.meetups: ", this.state.meetups)
 
-    const newArray = [];
-    //there was an element which venue.name doesn't exist, therefore couldn't render
-    this.props.meetups.forEach((item => {
-      newArray.push({
-        group: item.group.name,
-        venue: item.venue.name,
-        description: item.description.slice(3, 50),
-        date: item.local_date,
-        time: item.local_time,
-        id: item.id
-      })
-    }))
 
-    const mappedLi = newArray.map((el, i) =>
+    const mappedList = this.state.meetups.map((el, i) =>
       <UpcomingLi
-        group={el.group}
-        venue={el.venue}
-        date={el.date}
-        time={el.time}
-        description={el.description}
+        group={el.group.name}
+        venue={el.venue.name}
+        date={el.local_date}
+        time={el.local_time}
+        description={el.description.slice(3, 100)}
         key={i}
         id={el.id}
       />
     )
-
-    const firstLi = [];
-    for (let i = 0; i < 8; i++) {
-      firstLi.push(mappedLi[i])
-    }
-
 
     // creating array that has group and venue data of each event to pass to Map component
     const mapArray = [];
@@ -70,13 +46,57 @@ class Upcoming extends Component {
 
     return (
       <div>
-        <div className="map-container"><Map meetups={mapArray} /></div>
-        <div className='upcoming-container'><Row className='mt-3'>{firstLi}</Row></div>
-        <div className='text-center'><Button color="secondary">More</Button></div>
+        <div className="map-container">
+          <Map meetups={mapArray} />
+        </div>
+        <div className='upcoming-container'>
+          <Row className='mt-3'>
+            {mappedList}
+          </Row>
+        </div>
+        <div className='text-center'>
+          <Button onClick={this._updateLi} color="secondary">More</Button>
+        </div>
       </div>
     );
   }
+
+  _firstList() {
+    const firstList = [];
+    function sortDate(a, b) {
+      if (a.local_date > b.local_date) {
+        return 1;
+      } else if (a.local_date < b.local_date) {
+        return -1;
+      } else {
+        return 0;
+      }
+    }
+    const sortedByDateLi = this.props.meetups.sort(sortDate)
+
+    for (let i = 0; i < 6; i++) {
+      firstList.push(sortedByDateLi[i])
+    }
+    this.setState({
+      meetups: firstList
+    })
+  }
+
+  _updateLi() {
+    let currLength = this.state.meetups.length
+    const addedLi = [];
+    for (let i = currLength; i < currLength + 6; i++) {
+      addedLi.push(this.props.meetups[i])
+    }
+    this.setState({
+      meetups: [...this.state.meetups, ...addedLi]
+    })
+  }
+
+
+
 }
+
 
 
 export default Upcoming;

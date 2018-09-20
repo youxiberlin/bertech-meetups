@@ -9,6 +9,7 @@ import Navigation from './Navigation'
 import Profile from './Profile'
 import NotFound from './NotFound'
 
+
 class Application extends React.Component {
     constructor(props) {
         super(props)
@@ -35,8 +36,9 @@ class Application extends React.Component {
 
     render() {
         if (this.state.loading) {
-            return <div>loadinggg ...</div>
+            return <div className='spinner'>loading.....</div>
         }
+
 
         // console.log("@Application.jsx / this.state.data,", this.state.data)
         return (

@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Recommend = props => {
+const Recommend = () => {
   return (
     <div>
-      I'm Recommend Component
+      recommended
     </div>
   );
 };

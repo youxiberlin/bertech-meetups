@@ -1,11 +1,11 @@
-.navigation {
-    background-color: white;
+.nav-wrapper {
+    display: flex;
 }
 
-.nav-content {
+.nav-menu {
     display: flex;
-    justify-content: space-between;
 }
+
 
 .nav-link {
     color: rgb(102, 102, 102);

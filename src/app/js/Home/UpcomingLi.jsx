@@ -10,7 +10,6 @@ const UpcomingLi = props => {
   // console.log("UpcomingLi: ", props)
   return (
     <Col sm="6" md="4" lg="3">
-
       <Card body className='m-1 p-0'>
         <CardBody>
           <CardTitle>{props.group}</CardTitle>
