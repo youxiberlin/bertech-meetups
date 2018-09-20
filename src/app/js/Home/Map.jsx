@@ -8,11 +8,20 @@ class Map extends Component {
       lat: 52.522193,
       lng: 13.413740
     },
-    zoom: 13
+    zoom: 12
   };
 
   render() {
     console.log("@Map props:", this.props)
+
+    const mappedMarker = this.props.meetups.map((el, i) =>
+      <MapMarker
+        key={i}
+        lat={el.venue.lat}
+        lng={el.venue.lon}
+      />
+    )
+
     return (
       // Important! Always set the container height explicitly
       <div style={{ height: '50vh', width: '100%' }}>
@@ -21,11 +30,7 @@ class Map extends Component {
           defaultCenter={this.props.center}
           defaultZoom={this.props.zoom}
         >
-          <MapMarker
-            lat={52.516382}
-            lng={13.377954}
-            text={'I am Brandenburg Tor'}
-          />
+          {mappedMarker}
         </GoogleMapReact>
       </div>
     );

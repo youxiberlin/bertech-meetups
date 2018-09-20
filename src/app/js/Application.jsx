@@ -35,7 +35,7 @@ class Application extends React.Component {
 
     render() {
         if (this.state.loading) {
-            return <div>loading ...</div>
+            return <div>loadinggg ...</div>
         }
 
         // console.log("@Application.jsx / this.state.data,", this.state.data)

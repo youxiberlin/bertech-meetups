@@ -1,5 +1,5 @@
-const K_WIDTH = 40;
-const K_HEIGHT = 40;
+const K_WIDTH = 20;
+const K_HEIGHT = 20;
 
 const mapStyle = {
   // initially any map object has left top corner at lat lng coordinates
@@ -10,11 +10,11 @@ const mapStyle = {
   left: -K_WIDTH / 2,
   top: -K_HEIGHT / 2,
 
-  border: '5px solid #f44336',
+  // border: '3px solid #05204A',
   borderRadius: K_HEIGHT,
-  backgroundColor: 'white',
+  backgroundColor: 'rgba(227,71,145,0.5)',
   textAlign: 'center',
-  color: '#3f51b5',
+  color: '#000',
   fontSize: 16,
   fontWeight: 'bold',
   padding: 4
