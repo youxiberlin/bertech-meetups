@@ -1,4 +1,4 @@
-## Berlin Tech Meetups Exlorer
+## Berlin Tech Meetups Explorer
 
 my final project at Ironhack Berlin 2018
 
