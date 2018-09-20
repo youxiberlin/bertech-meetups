@@ -1,0 +1,20 @@
+.navigation {
+    background-color: white;
+}
+
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-link {
+    color: rgb(102, 102, 102);
+
+    &:visited {
+        color: rgb(102, 102, 102);
+    }
+
+    &:hover {
+        color: rgb(102, 102, 102);
+    }
+}

@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    color: $text-color;
+}
+
+.wrapper {
+    //padding: 25px calc((100vw - 960px) / 2);
+
+    // @media (max-width: 980px) {
+    //     padding: 25px 10px;
+    // }
+
+    h1{
+        border: 3px solid #eee;
+        text-align: center;
+    }
+
+    .contents {
+        border: 3px solid #eee;
+
+        .map-container{
+            border: 3px solid #ccc;
+            background: #eee;
+            width: 100vw;
+            height: 50vh;
+        }
+
+        .upcoming-container{
+            padding: 0 15px;
+            display: flex;
+        }
+
+        .trending-container{
+            border: 3px solid #ccc;
+
+        }
+
+        .recommend-container{
+            border: 3px solid #ccc;
+        }
+    }
+}
