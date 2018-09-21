@@ -19,8 +19,8 @@ class Upcoming extends Component {
   }
 
   render() {
-    console.log("Upcoming, this.props.meetups: ", this.props.meetups)
-    console.log("Upcoming, this.state.meetups: ", this.state.meetups)
+    // console.log("Upcoming, this.props.meetups: ", this.props.meetups)
+    // console.log("Upcoming, this.state.meetups: ", this.state.meetups)
 
 
     const mappedList = this.state.meetups.map((el, i) =>
@@ -37,7 +37,7 @@ class Upcoming extends Component {
 
     // creating array that has group and venue data of each event to pass to Map component
     const mapArray = [];
-    this.props.meetups.forEach((item) => {
+    this.state.meetups.forEach((item) => {
       mapArray.push({
         group: item.group,
         venue: item.venue
@@ -48,15 +48,19 @@ class Upcoming extends Component {
       <div>
         <div className="map-container">
           <Map meetups={mapArray} />
+
         </div>
-        <div className='upcoming-container'>
-          <Row className='mt-3'>
-            {mappedList}
-          </Row>
+        <div className='upcoming-upper-container pb-5'>
+          <div className='upcoming-container'>
+            <Row className='mt-3'>
+              {mappedList}
+            </Row>
+          </div>
+          <div className='text-center pt-4'>
+            <Button onClick={this._updateLi} color="secondary">More</Button>
+          </div>
         </div>
-        <div className='text-center'>
-          <Button onClick={this._updateLi} color="secondary">More</Button>
-        </div>
+
       </div>
     );
   }
@@ -85,7 +89,7 @@ class Upcoming extends Component {
   _updateLi() {
     let currLength = this.state.meetups.length
     const addedLi = [];
-    for (let i = currLength; i < currLength + 6; i++) {
+    for (let i = currLength; i < currLength + 1; i++) {
       addedLi.push(this.props.meetups[i])
     }
     this.setState({

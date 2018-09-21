@@ -32,13 +32,14 @@ body {
             background: #eee;
             width: 100vw;
             height: 50vh;
+            // top: 20px;
+            // position: sticky;
         }
 
         .upcoming-upper-container{
             background: rgba(231, 234, 236, 0.5);
             padding: 0 15px;
             .upcoming-container{
-                
                 display: flex;
             }
            }

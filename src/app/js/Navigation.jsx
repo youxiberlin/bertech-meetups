@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 const Navigation = props => {
     return (
-        <div class='nav-wrapper'>
+        <div className='nav-wrapper'>
 
             <Link className="link nav-link" to="/">
                 Home
@@ -25,7 +25,7 @@ const Navigation = props => {
                         Logout
                         </Link>
                 ) : (
-                        <span class='nav-menu'>
+                        <span className='nav-menu'>
                             <Link className="link nav-link" to="/auth/sign-in">
                                 Sign in
                             </Link>
