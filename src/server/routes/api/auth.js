@@ -7,6 +7,7 @@ const config = require('../../config')
 const upload = require('../../utils/upload')
 
 router.post('/sign-up', (req, res) => {
+
     const { email, password } = req.body
 
     if (!email || !password) res.status(400).send({ error: 'Missing Credentials.' })

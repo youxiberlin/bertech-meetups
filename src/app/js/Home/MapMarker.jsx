@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { mapStyle } from './mapStyle.js';
 
 const MapMarker = props => {

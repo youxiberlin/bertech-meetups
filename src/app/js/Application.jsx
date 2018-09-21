@@ -3,6 +3,8 @@ import axios from 'axios'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import jwtDecode from 'jwt-decode'
 
+import api from "./utils/api"
+
 import Auth from './Auth'
 import Home from './Home'
 import Navigation from './Navigation'
@@ -26,13 +28,12 @@ class Application extends React.Component {
     }
 
     componentDidMount() {
-        axios.get('/api')
+        api.get('/api')
             .then(result => {
                 this.setState({ meetup: result, loading: false })
             })
             .catch(console.error)
 
-        this._setUser()
     }
 
     render() {
@@ -47,14 +48,13 @@ class Application extends React.Component {
                 <div>
                     <Navigation user={this.state.user} />
                     <Switch>
-                        <Route exact path="/" render={() => <Home user={this.state.user} meetup={this.state.meetup} />} />
                         <Route exact path="/profile" render={() => <Profile user={this.state.user} />} />
                         <Route
                             path="/auth"
                             render={() => <Auth setUser={this._setUser} resetUser={this._resetUser} />}
                         />
-
-                        {/* <Route component={NotFound} /> */}
+                        <Route path="/" render={() => <Home user={this.state.user} meetup={this.state.meetup} />} />
+                        <Route component={NotFound} />
                     </Switch>
                     <Footer />
                 </div>

@@ -8,20 +8,10 @@ import { Route, Switch } from 'react-router-dom'
 
 class Home extends Component {
   render() {
-    // console.log("@index.jsx/Home this.props.meetup", this.props.meetup.data.events)
     return (
       < Switch >
         <Route path="/meetup/:id"
-          render={() => {
-            console.log("@index.jsx meetup detail!")
-            return (
-              <div className='detail'>
-                <Detail
-                  meetup={this.props.meetup.data.events}
-                />
-              </div>
-            )
-          }}
+          render={() => <Detail meetup={this.props.meetup.events} />}
         />
         <Route exact path="/"
           render={() => {
@@ -29,10 +19,10 @@ class Home extends Component {
               <div className="wrapper">
                 <h4>Hello, {this.props.user ? this.props.user.email : 'tech peeps'} :)</h4>
                 <div className='contents'>
-                  <Upcoming meetups={this.props.meetup.data.events} />
+                  <Upcoming meetups={this.props.meetup.events} />
                   <div className='trending-container pt-5 pb-5'>
                     <h3>Hot Meetups</h3>
-                    <Rsvp meetups={this.props.meetup.data.events} />
+                    <Rsvp meetups={this.props.meetup.events} />
                   </div>
                   <div className='recommend-container pt-5 pb-5'>
                     <h3>Recommended</h3>
