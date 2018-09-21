@@ -26,6 +26,7 @@ class Upcoming extends Component {
     const mappedList = this.state.meetups.map((el, i) =>
       <UpcomingLi
         group={el.group.name}
+        name={el.name}
         venue={el.venue.name}
         date={el.local_date}
         time={el.local_time}

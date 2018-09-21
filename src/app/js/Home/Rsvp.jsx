@@ -25,9 +25,11 @@ const Rsvp = props => {
 
   const mappedHotLi = hotList.map((el, i) =>
     <RsvpItem
+      name={el.name}
       group={el.group.name}
       key={i}
       rsvp={el.yes_rsvp_count}
+      id={el.id}
     />
   )
 

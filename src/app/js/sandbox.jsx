@@ -1,78 +1,38 @@
-import React from 'react'
-import axios from 'axios'
-import { BrowserRouter, Switch, Route } from 'react-router-dom'
-import jwtDecode from 'jwt-decode'
+import React, { Component } from 'react';
+import { withRouter } from 'react-router'
 
-import Auth from './Auth'
-import Home from './Home'
-import Navigation from './Navigation'
-import Profile from './Profile'
-import NotFound from './NotFound'
 
-class Application extends React.Component {
+class Detail extends Component {
   constructor(props) {
     super(props)
-
     this.state = {
-      user: this._setUser(true),
-      meetup: [],
-      loading: true,
+      beer: [],
     }
-
-    this._setUser = this._setUser.bind(this)
-    this._resetUser = this._resetUser.bind(this)
   }
 
   componentDidMount() {
-    axios.get('/api')
-      .then(result => {
-        this.setState({ meetup: result, loading: false })
-      })
-      .catch(console.error)
-
-    this._setUser()
-  }
-
-  render() {
-    if (this.state.loading) {
-      return <div>loadinggg ...</div>
-    }
-
-    // console.log("@Application.jsx / this.state.data,", this.state.data)
-    return (
-      <BrowserRouter>
-        <div>
-          <Navigation user={this.state.user} />
-          <Switch>
-            <Route exact path="/" render={() => <Home user={this.state.user} meetup={this.state.meetup} />} />
-            <Route exact path="/profile" render={() => <Profile user={this.state.user} />} />
-            <Route
-              path="/auth"
-              render={() => <Auth setUser={this._setUser} resetUser={this._resetUser} />}
-            />
-            <Route component={NotFound} />
-          </Switch>
-        </div>
-      </BrowserRouter>
-    )
-  }
-
-  _resetUser() {
     this.setState({
-      user: null,
+      beer: this.props.beer,
     })
   }
 
-  _setUser(init) {
-    const token = localStorage.getItem('identity')
-    if (token) {
-      const decoded = jwtDecode(token)
-      delete decoded.iat
-      if (init) return decoded
-      this.setState({ user: decoded })
-    } else {
-      return null
-    }
+  render() {
+    console.log("@Detail props:", this.props)
+    const matchingBeer = this.props.beer.find(el =>
+      el._id === this.props.match.params.id
+    )
+
+    // console.log("@Detail matchingBeer : ", matchingBeer)
+
+    return (
+      <div className="detail">
+        <h3>{matchingBeer.name}</h3>
+        <div className="detail-img">
+          <img src={matchingBeer.image_url} alt="" />
+        </div>
+        <p>{matchingBeer.brewers_tips}</p>
+      </div>
+    );
   }
 }
 
