@@ -16,7 +16,7 @@ const Rsvp = props => {
     }
   }
   const sortedByRsvp = props.meetups.sort(sortRsvp)
-  console.log('sortedByRsvp', sortedByRsvp)
+  // console.log('sortedByRsvp', sortedByRsvp)
 
   const hotList = []
   for (let i = 0; i < 3; i++) {

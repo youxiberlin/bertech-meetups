@@ -10,7 +10,7 @@ const RsvpItem = props => {
       <Card body className='m-1 p-0'>
         <CardBody>
           <CardTitle>{props.group}</CardTitle>
-          <CardText>{props.rsvp} tech peeps are going.</CardText>
+          <CardText><span className='emphasized'>{props.rsvp}</span> tech peeps are going.</CardText>
         </CardBody>
       </Card>
     </Col>

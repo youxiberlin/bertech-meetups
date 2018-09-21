@@ -8,6 +8,7 @@ import Home from './Home'
 import Navigation from './Navigation'
 import Profile from './Profile'
 import NotFound from './NotFound'
+import Footer from './Footer'
 
 
 class Application extends React.Component {
@@ -52,8 +53,10 @@ class Application extends React.Component {
                             path="/auth"
                             render={() => <Auth setUser={this._setUser} resetUser={this._resetUser} />}
                         />
-                        <Route component={NotFound} />
+
+                        {/* <Route component={NotFound} /> */}
                     </Switch>
+                    <Footer />
                 </div>
             </BrowserRouter>
         )

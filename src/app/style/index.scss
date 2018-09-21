@@ -1,8 +1,9 @@
 $primary-color: #63adf2;
-$secondary-color: #ff686b;
+$secondary-color: #6A8068;
 $text-color: #333;
 $grey: rgb(200, 200, 200);
 
 @import './base.scss';
 @import './components.scss';
 @import './navigation.scss';
+@import './footer.scss'

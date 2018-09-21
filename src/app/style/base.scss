@@ -19,34 +19,48 @@ body {
     // }
 
     h4{
-        border: 3px solid #eee;
+        // border: 3px solid #eee;
         text-align: center;
         color: rgb(102, 102, 102);
     }
 
     .contents {
-        border: 3px solid #eee;
+       // border: 3px solid #eee;
 
         .map-container{
-            border: 1px solid #ccc;
+            // border: 1px solid #ccc;
             background: #eee;
             width: 100vw;
             height: 50vh;
         }
 
-        .upcoming-container{
+        .upcoming-upper-container{
+            background: rgba(231, 234, 236, 0.5);
             padding: 0 15px;
-            display: flex;
-        }
+            .upcoming-container{
+                
+                display: flex;
+            }
+           }
+
 
         .trending-container{
-            border: 1px solid #ccc;
+            // border: 1px solid #ccc;
             text-align: center;
         }
 
         .recommend-container{
-            border: 1px solid #ccc;
+            // border: 1px solid #ccc;
             text-align: center;
+            background: rgba(231, 234, 236, 0.5);
         }
     }
+}
+
+.secondary-color {
+    color: $secondary-color;
+}
+
+.font-sm {
+    font-size: 0.9rem;
 }

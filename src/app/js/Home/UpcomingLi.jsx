@@ -14,7 +14,7 @@ const UpcomingLi = props => {
         <CardBody>
           <CardTitle>{props.group}</CardTitle>
           <CardSubtitle>{props.venue}</CardSubtitle>
-          <CardText>{props.date} | {props.time}</CardText>
+          <CardText className='secondary-color font-sm'>{props.date} | {props.time}</CardText>
           <CardText>{props.description}</CardText>
           <Link to={`/meetup/${props.id}`}>
             <Button outline color="secondary" size='sm' className=''>Detail</Button>
