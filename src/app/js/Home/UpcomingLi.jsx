@@ -1,15 +1,18 @@
 import React, { Component } from 'react';
 import {
   Card, CardText, CardBody,
-  CardTitle, CardSubtitle, Button, Row, Col
+  CardTitle, CardSubtitle, Button, Col
 } from 'reactstrap';
 import { Link } from 'react-router-dom'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faHeart } from '@fortawesome/free-solid-svg-icons'
 
 class UpcomingLi extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      flipped: null
+      flipped: null,
+      heart: null,
     }
   }
 
@@ -21,10 +24,23 @@ class UpcomingLi extends Component {
     this.setState({ flipped: true });
   }
 
+  heartOut() {
+    this.setState({ heart: false });
+  }
+
+  heartOver() {
+    this.setState({ heart: true });
+  }
+
   render() {
     let flipped = ''
     if (this.state.flipped) {
       flipped += ' flipped'
+    }
+
+    let heartFlipped = 'card-heart'
+    if (this.state.heart) {
+      heartFlipped += ' heart-on'
     }
 
     return (
@@ -41,6 +57,11 @@ class UpcomingLi extends Component {
               <CardText className='secondary-color font-sm'>{this.props.date} | {this.props.time}</CardText>
               <CardText>Venue: {this.props.venue} <br />{this.props.description}</CardText>
               <Button outline color="secondary" size='sm' className=''>Detail</Button>
+              <span className='pl-3'><FontAwesomeIcon icon={faHeart}
+                className={heartFlipped}
+                onMouseOut={() => this.heartOut()}
+                onMouseOver={() => this.heartOver()}
+              /></span>
             </CardBody>
           </Card>
         </Link>
