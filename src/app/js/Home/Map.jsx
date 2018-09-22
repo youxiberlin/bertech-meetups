@@ -12,13 +12,14 @@ class Map extends Component {
   };
 
   render() {
-    console.log("@Map props:", this.props.meetups)
+    // console.log("@Map props:", this.props.meetups)
 
     const mappedMarker = this.props.meetups.map((el, i) =>
       <MapMarker
         key={i}
         lat={el.venue.lat}
         lng={el.venue.lon}
+        name={el.name}
       />
     )
 

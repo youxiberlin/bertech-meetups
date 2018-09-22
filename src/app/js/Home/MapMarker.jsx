@@ -1,11 +1,17 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { mapStyle } from './mapStyle.js';
+import InfoWindow from './InfoWindow';
 
-const MapMarker = props => {
-  return (
-    <div style={mapStyle}>
-    </div>
-  );
-};
+class MapMarker extends Component {
+  render() {
+    return (
+      <div style={mapStyle}>
+        <InfoWindow
+          info={this.props}
+        />
+      </div>
+    );
+  }
+}
 
 export default MapMarker;

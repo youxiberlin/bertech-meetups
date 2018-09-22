@@ -57,11 +57,13 @@ class UpcomingLi extends Component {
               <CardText className='secondary-color font-sm'>{this.props.date} | {this.props.time}</CardText>
               <CardText>Venue: {this.props.venue} <br />{this.props.description}</CardText>
               <Button outline color="secondary" size='sm' className=''>Detail</Button>
-              <span className='pl-3'><FontAwesomeIcon icon={faHeart}
-                className={heartFlipped}
-                onMouseOut={() => this.heartOut()}
-                onMouseOver={() => this.heartOver()}
-              /></span>
+              <span className='pl-3'>
+                <FontAwesomeIcon icon={faHeart}
+                  className={heartFlipped}
+                  onMouseOut={() => this.heartOut()}
+                  onMouseOver={() => this.heartOver()}
+                />
+              </span>
             </CardBody>
           </Card>
         </Link>

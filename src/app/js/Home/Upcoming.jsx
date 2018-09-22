@@ -41,7 +41,8 @@ class Upcoming extends Component {
     this.state.meetups.forEach((item) => {
       mapArray.push({
         group: item.group,
-        venue: item.venue
+        venue: item.venue,
+        name: item.name,
       })
     })
 

@@ -19,16 +19,13 @@ body {
     // }
 
     h4{
-        // border: 3px solid #eee;
         text-align: center;
         color: rgb(102, 102, 102);
     }
 
     .contents {
-       // border: 3px solid #eee;
 
         .map-container{
-            // border: 1px solid #ccc;
             background: #eee;
             width: 100vw;
             height: 50vh;
@@ -46,12 +43,10 @@ body {
 
 
         .trending-container{
-            // border: 1px solid #ccc;
             text-align: center;
         }
 
         .recommend-container{
-            // border: 1px solid #ccc;
             text-align: center;
             background: rgba(231, 234, 236, 0.5);
         }
@@ -64,4 +59,11 @@ body {
 
 .font-sm {
     font-size: 0.9rem;
+}
+
+.info-window {
+    font-size: 0.8rem;
+    background: rgba(255, 255, 255,0.7);
+    width: 60px;
+    padding: 3px;
 }

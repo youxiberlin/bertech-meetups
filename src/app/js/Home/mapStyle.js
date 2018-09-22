@@ -15,9 +15,7 @@ const mapStyle = {
   backgroundColor: 'rgba(227,71,145,0.5)',
   textAlign: 'center',
   color: '#000',
-  fontSize: 16,
-  fontWeight: 'bold',
-  padding: 4
+  // padding: 4
 };
 
 export { mapStyle };
