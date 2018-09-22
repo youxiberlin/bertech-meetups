@@ -79,7 +79,7 @@ class Upcoming extends Component {
     }
     const sortedByDateLi = this.props.meetups.sort(sortDate)
 
-    for (let i = 0; i < 6; i++) {
+    for (let i = 0; i < 1; i++) {
       firstList.push(sortedByDateLi[i])
     }
     this.setState({

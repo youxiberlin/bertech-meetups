@@ -1,6 +1,6 @@
 import React from 'react';
 import RsvpItem from './RsvpItem';
-import { Row, Button } from 'reactstrap';
+import { Row } from 'reactstrap';
 
 
 const Rsvp = props => {
@@ -23,10 +23,13 @@ const Rsvp = props => {
     hotList.push(sortedByRsvp[i])
   }
 
+
   const mappedHotLi = hotList.map((el, i) =>
     <RsvpItem
       name={el.name}
       group={el.group.name}
+      date={el.local_date}
+      time={el.local_time}
       key={i}
       rsvp={el.yes_rsvp_count}
       id={el.id}

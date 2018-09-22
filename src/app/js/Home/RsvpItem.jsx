@@ -13,7 +13,9 @@ const RsvpItem = props => {
         <CardBody>
           <CardTitle>{props.name}</CardTitle>
           <CardSubtitle>{props.group}</CardSubtitle>
-          <CardText><span className='emphasized'>{props.rsvp}</span><br />tech peeps are going.</CardText>
+          <CardText>
+            <span className='emphasized'>{props.rsvp}</span>
+            <br />tech peeps are going.<br />{props.date} | {props.time}</CardText>
           <Link to={`/meetup/${props.id}`}>
             <Button outline color="secondary" size='sm' className=''>Detail</Button>
           </Link>
