@@ -19,7 +19,7 @@ class Application extends React.Component {
         this.state = {
             user: this._setUser(true),
             meetup: [],
-            loadingg: true,
+            loading: true,
         }
 
         this._setUser = this._setUser.bind(this)
