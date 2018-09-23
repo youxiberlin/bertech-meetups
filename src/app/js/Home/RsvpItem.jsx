@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom'
 const RsvpItem = props => {
   return (
     <Col sm="6" md="4" lg="4">
-      <Card body className='m-1 p-0'>
+      <Card body className='m-1 p-0 card-shadow'>
         <CardBody>
           <CardTitle>{props.name}</CardTitle>
           <CardSubtitle>{props.group}</CardSubtitle>

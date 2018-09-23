@@ -48,7 +48,7 @@ class UpcomingLi extends Component {
         <Link className='card-link' to={`/meetup/${this.props.id}`}>
           <Card body className='m-1 p-0' >
             <CardBody
-              className={flipped}
+              className={`card-shadow ${flipped}`}
               onMouseOut={() => this.mouseOut()}
               onMouseOver={() => this.mouseOver()}
             >

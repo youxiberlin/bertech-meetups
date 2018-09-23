@@ -19,8 +19,7 @@ class Upcoming extends Component {
   }
 
   render() {
-    // console.log("Upcoming, this.props.meetups: ", this.props.meetups)
-    // console.log("Upcoming, this.state.meetups: ", this.state.meetups)
+    console.log("Upcoming, this.state.meetups: ", this.state.meetups)
 
 
     const mappedList = this.state.meetups.map((el, i) =>
@@ -70,6 +69,8 @@ class Upcoming extends Component {
 
   _firstList() {
     const firstList = [];
+
+    // list sorted by date in a descending order
     function sortDate(a, b) {
       if (a.local_date > b.local_date) {
         return 1;
@@ -80,9 +81,33 @@ class Upcoming extends Component {
       }
     }
     const sortedByDateLi = this.props.meetups.sort(sortDate)
+    // console.log('sortedByDateLi', sortedByDateLi)
 
-    for (let i = 0; i < 1; i++) {
-      firstList.push(sortedByDateLi[i])
+    // create new array with necesarry keys
+    const newArray = [];
+
+    sortedByDateLi.forEach(el => {
+      let placeholder = {
+        name: 'unknown',
+        lat: 52.516382,
+        lon: 13.377954
+      }
+      newArray.push({
+        id: el.id,
+        name: el.name,
+        description: el.description ? el.description : 'unknown',
+        local_time: el.local_time,
+        local_date: el.local_date,
+        group: el.group,
+        venue: el.venue ? el.venue : placeholder,
+        yes_rsvp_count: el.yes_rsvp_count
+      })
+    });
+
+    // console.log('newArray', newArray)
+
+    for (let i = 0; i < 6; i++) {
+      firstList.push(newArray[i])
     }
     this.setState({
       meetups: firstList
@@ -92,7 +117,7 @@ class Upcoming extends Component {
   _updateLi() {
     let currLength = this.state.meetups.length
     const addedLi = [];
-    for (let i = currLength; i < currLength + 1; i++) {
+    for (let i = currLength; i < currLength + 6; i++) {
       addedLi.push(this.props.meetups[i])
     }
     this.setState({

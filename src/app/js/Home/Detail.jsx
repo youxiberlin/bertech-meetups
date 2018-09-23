@@ -7,7 +7,7 @@ const Detail = props => {
   const matchingMeetup = props.meetup.find(el =>
     el.id == props.match.params.id)
 
-  console.log("@Detail matchingMeetup: ", matchingMeetup)
+  // console.log("@Detail matchingMeetup: ", matchingMeetup)
 
   return (
     <div className="detail">
