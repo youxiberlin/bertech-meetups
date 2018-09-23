@@ -1,39 +1,21 @@
 import React, { Component } from 'react';
 
 class InfoWindow extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      info: null
-    }
-  }
-
-  mouseOut() {
-    this.setState({ info: false });
-  }
-
-  mouseOver() {
-    this.setState({ info: true });
-  }
-
   render() {
-    // console.log(this.state.info)
-    console.log("@InfoWindow this.props", this.props.info)
     const info = this.props.info;
+    // console.log("@InfoWindow,", this.props.display)
+
 
     let infoDisplay = ''
-    if (this.state.info) {
+    if (this.props.display) {
       infoDisplay += ' info-on'
     }
 
     return (
       <div
-        onMouseOut={() => this.mouseOut()}
-        onMouseOver={() => this.mouseOver()}
-        // className={infoDisplay}
-        className={`info-window info-off ${infoDisplay}`}
+        className={`info-off ${infoDisplay}`}
       >
-        <p>{info.name}</p>
+        <p><a href="http://www.google.com">{info.name}</a></p>
       </div>
     );
   }

@@ -93,6 +93,13 @@
     color: rgba(227,71,145, 0.8);
 }
 
-// .info-off {
-//     visibility: hidden;
-// }
+.info-off{
+    display:none;
+}
+
+.info-on{
+    display:block;
+    width: 60px;
+    background: rgba(255,255,255,0.5);
+    padding: 3px;
+}
