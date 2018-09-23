@@ -43,6 +43,7 @@ class Upcoming extends Component {
         group: item.group,
         venue: item.venue,
         name: item.name,
+        id: item.id,
       })
     })
 

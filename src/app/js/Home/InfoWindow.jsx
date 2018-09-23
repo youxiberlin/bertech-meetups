@@ -3,8 +3,6 @@ import React, { Component } from 'react';
 class InfoWindow extends Component {
   render() {
     const info = this.props.info;
-    // console.log("@InfoWindow,", this.props.display)
-
 
     let infoDisplay = ''
     if (this.props.display) {
@@ -12,10 +10,8 @@ class InfoWindow extends Component {
     }
 
     return (
-      <div
-        className={`info-off ${infoDisplay}`}
-      >
-        <p><a href="http://www.google.com">{info.name}</a></p>
+      <div className={`info-off ${infoDisplay}`}>
+        <p><a href={`/meetup/${info.id}`}>{info.name}</a></p>
       </div>
     );
   }

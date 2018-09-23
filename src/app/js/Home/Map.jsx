@@ -20,6 +20,7 @@ class Map extends Component {
         lat={el.venue.lat}
         lng={el.venue.lon}
         name={el.name}
+        id={el.id}
       />
     )
 
