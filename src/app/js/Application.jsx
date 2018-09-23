@@ -19,7 +19,7 @@ class Application extends React.Component {
         this.state = {
             user: this._setUser(true),
             meetup: [],
-            loading: true,
+            loadingg: true,
         }
 
         this._setUser = this._setUser.bind(this)
@@ -40,8 +40,6 @@ class Application extends React.Component {
             return <div className='spinner'>loading.....</div>
         }
 
-
-        // console.log("@Application.jsx / this.state.data,", this.state.data)
         return (
             <BrowserRouter>
                 <div>
