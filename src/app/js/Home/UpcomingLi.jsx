@@ -59,7 +59,7 @@ class UpcomingLi extends Component {
           >
             <CardTitle>{this.props.name}</CardTitle>
             <CardSubtitle>{this.props.group}</CardSubtitle>
-            <CardText className='secondary-color font-sm'>{this.props.date} | {this.props.time}</CardText>
+            <CardText className='secondary-color font-sm font-weight-bold'>{this.props.date} | {this.props.time}</CardText>
             <CardText>Venue: {this.props.venue} <br />{this.props.description}</CardText>
             <Link className='card-link' to={`/meetup/${this.props.id}`}>
               <Button outline size='sm' className='detail-button'>Detail</Button>

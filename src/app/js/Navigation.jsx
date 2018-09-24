@@ -35,7 +35,9 @@ const Navigation = props => {
                         </span>
                     )}
             </div>
+
         </div>
+
     )
 }
 

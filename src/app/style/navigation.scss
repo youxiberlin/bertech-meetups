@@ -1,6 +1,10 @@
 .nav-wrapper {
     display: flex;
-    background: $purple;
+    background: white;
+    font-size: 0.9rem;
+    // border-bottom: #eee solid 1px;
+
+
 }
 
 .nav-menu {
@@ -9,14 +13,14 @@
 
 
 .nav-link {
-    color: white;
+    color: $purple;
 
     &:visited {
-        color: white;
+        color: $purple;
     }
 
     &:hover {
-        color: white;
+        color: $purple;
     }
 }
 

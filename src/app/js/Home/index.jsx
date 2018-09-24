@@ -6,7 +6,9 @@ import Recommend from './Recommend';
 import Detail from './Detail';
 import { Route, Switch } from 'react-router-dom'
 import { Button } from 'reactstrap';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCode } from '@fortawesome/free-solid-svg-icons'
+import { faSearch } from '@fortawesome/free-solid-svg-icons'
 
 
 class Home extends Component {
@@ -32,20 +34,14 @@ class Home extends Component {
       return <div className='spinner'>loading.....</div>
     }
 
-    // 1 create upcoming list
+    //  create upcoming list
     const sortedByDate = this.state.meetups.sort(this._sortByDate)
     const upcomingLi = [];
     for (let i = 0; i < this.state.upcomingVisible; i++) {
       upcomingLi.push(sortedByDate[i]);
     }
 
-    // 2 make updateLi() function and put it on the button
-    // this is wishing function, function to update the upcoming list
-
-
-
-
-    // 3 create rsvp list
+    // 3create rsvp list
     const sortedByRsvp = this.state.meetups.sort(this._sortByRsvp)
     const rsvpLi = [];
     for (let i = 0; i < this.state.rsvpVisible; i++) {
@@ -65,7 +61,19 @@ class Home extends Component {
           render={() => {
             return (
               <div className="wrapper">
-                <h4 className='tagline'>Hello, {this.props.user ? this.props.user.email : 'tech peeps'} :)</h4>
+                <div className="header">
+                  <div className='nav-border'></div>
+                  <div className="ml-5 mt-4 mb-4">
+                    <FontAwesomeIcon className="code-icon" icon={faSearch} />
+                    {/* <FontAwesomeIcon className="code-icon" icon={faCode} /> */}
+                    <h4 className='tagline ml-3'>
+                      Bertech Meetups
+                    </h4>
+                    <p className='pl-5 pt-1'>
+                      Hello, {this.props.user ? this.props.user.email : 'tech peeps'} in Berlin.<br></br>
+                      Discover your next favorite tech meetups.</p>
+                  </div>
+                </div>
                 <div className='contents'>
                   <div className="map-container">
                     <Map
@@ -73,9 +81,11 @@ class Home extends Component {
                       rsvp={rsvpLi}
                     />
                   </div>
-                  <div><Upcoming meetups={upcomingLi} user={this.props.user} /></div>
-                  <div className='text-center pt-4'>
-                    <Button onClick={this._updateLi} color="secondary">More</Button>
+                  <div className='upcoming-upper-container'>
+                    <div><Upcoming meetups={upcomingLi} user={this.props.user} /></div>
+                    <div className='text-center pt-4'>
+                      <Button onClick={this._updateLi} color="secondary">More</Button>
+                    </div>
                   </div>
                   <div className='trending-container pt-5 pb-5'>
                     <h3>Hot Meetups</h3>

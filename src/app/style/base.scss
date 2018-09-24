@@ -17,14 +17,34 @@ body {
     // @media (max-width: 980px) {
     //     padding: 25px 10px;
     // }
+    .header {
+        color: rgb(100, 100, 100);
+        // height: 15vh;
+        .nav-border{
+            height: 1px;
+            width: 100%;
+            background: linear-gradient(to right, $purple, rgba(227,71,145,0.4));
+            }
 
-    h4{
-        text-align: center;
-        color: $purple;
-        margin: 15px auto;
+        .code-icon{
+            font-size: 2rem;
+            color: $purple;
+        }
+
+        h4{
+            // text-align: center;
+            color: $purple;
+            margin: auto;
+            display: inline;
+            font-size: 2rem;
+        }
     }
 
+
+
     .contents {
+
+
 
         .map-container{
             background: #eee;
@@ -36,10 +56,8 @@ body {
 
         .upcoming-upper-container{
             background: rgba(231, 234, 236, 0.5);
-            padding: 0 15px;
-            .upcoming-container{
-                display: flex;
-            }
+            padding:  15px;
+
            }
 
 
