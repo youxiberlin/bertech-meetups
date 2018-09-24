@@ -12,7 +12,7 @@ class Map extends Component {
   };
 
   render() {
-    console.log('@map', this.props.rsvp)
+    // console.log('@map', this.props.rsvp)
 
     const mappedMarker = this.props.upcoming.map((el, i) =>
       <MapMarker
@@ -21,6 +21,7 @@ class Map extends Component {
         lng={el.venue.lon}
         name={el.name}
         id={el.id}
+        cat='upcoming'
       />
     )
 

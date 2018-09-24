@@ -47,7 +47,7 @@ class Home extends Component {
     for (let i = 0; i < 3; i++) {
       rsvpLi.push(sortedByRsvp[i])
     }
-    console.log('rsvpLi', rsvpLi)
+    // console.log('rsvpLi', rsvpLi)
 
     // create recommended list (in the future)
 
@@ -56,7 +56,7 @@ class Home extends Component {
     return (
       < Switch >
         <Route path="/meetup/:id"
-          render={() => <Detail />}
+          render={() => <Detail meetup={this.props.meetup.events} />}
         />
         <Route exact path="/"
           render={() => {

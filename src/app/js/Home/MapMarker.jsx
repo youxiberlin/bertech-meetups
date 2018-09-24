@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { mapStyle } from './mapStyle.js';
+import { upcomingStyle, rsvpStyle } from './mapStyle.js';
 import InfoWindow from './InfoWindow';
 
 
@@ -20,6 +20,13 @@ class MapMarker extends Component {
   }
 
   render() {
+    let mapStyle;
+    if (this.props.cat == 'upcoming') {
+      mapStyle = upcomingStyle
+    } else if (this.props.cat == 'rsvp') {
+      mapStyle = rsvpStyle
+    }
+
     return (
       <div style={mapStyle}
         onMouseOut={() => this.mouseOut()}
