@@ -53,5 +53,8 @@
         "node-sass": "^4.9.3",
         "parcel-bundler": "^1.9.7",
         "react-hot-loader": "^4.3.7"
+    },
+    "engine": {
+        "node": "8.11.4"
     }
 }
