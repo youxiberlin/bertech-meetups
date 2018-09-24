@@ -54,7 +54,7 @@
         "parcel-bundler": "^1.9.7",
         "react-hot-loader": "^4.3.7"
     },
-    "engine": {
+    "engines": {
         "node": "8.11.4"
     }
 }
