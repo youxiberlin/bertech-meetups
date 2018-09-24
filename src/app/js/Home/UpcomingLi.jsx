@@ -32,6 +32,10 @@ class UpcomingLi extends Component {
     this.setState({ heart: true });
   }
 
+  saveCard() {
+    console.log("card is saved")
+  }
+
   render() {
     let flipped = ''
     if (this.state.flipped) {
@@ -45,28 +49,31 @@ class UpcomingLi extends Component {
 
     return (
       <Col sm="6" md="4" lg="3">
-        <Link className='card-link' to={`/meetup/${this.props.id}`}>
-          <Card body className='m-1 p-0' >
-            <CardBody
-              className={`card-shadow ${flipped}`}
-              onMouseOut={() => this.mouseOut()}
-              onMouseOver={() => this.mouseOver()}
-            >
-              <CardTitle>{this.props.name}</CardTitle>
-              <CardSubtitle>{this.props.group}</CardSubtitle>
-              <CardText className='secondary-color font-sm'>{this.props.date} | {this.props.time}</CardText>
-              <CardText>Venue: {this.props.venue} <br />{this.props.description}</CardText>
+
+        <Card body className='m-1 p-0' >
+          <CardBody
+            className={`card-shadow ${flipped}`}
+            onMouseOut={() => this.mouseOut()}
+            onMouseOver={() => this.mouseOver()}
+          >
+            <CardTitle>{this.props.name}</CardTitle>
+            <CardSubtitle>{this.props.group}</CardSubtitle>
+            <CardText className='secondary-color font-sm'>{this.props.date} | {this.props.time}</CardText>
+            <CardText>Venue: {this.props.venue} <br />{this.props.description}</CardText>
+            <Link className='card-link' to={`/meetup/${this.props.id}`}>
               <Button outline color="secondary" size='sm' className=''>Detail</Button>
-              <span className='pl-3'>
-                <FontAwesomeIcon icon={faHeart}
-                  className={heartFlipped}
-                  onMouseOut={() => this.heartOut()}
-                  onMouseOver={() => this.heartOver()}
-                />
-              </span>
-            </CardBody>
-          </Card>
-        </Link>
+            </Link>
+            <span className='pl-3'>
+              <FontAwesomeIcon icon={faHeart}
+                className={heartFlipped}
+                onMouseOut={() => this.heartOut()}
+                onMouseOver={() => this.heartOver()}
+                onClick={() => this.saveCard()}
+              />
+            </span>
+          </CardBody>
+        </Card>
+
       </Col>
     );
   }
