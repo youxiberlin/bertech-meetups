@@ -1,7 +1,8 @@
 $primary-color: #63adf2;
-$secondary-color: #6A8068;
+$secondary-color: rgba(82,72,156, 0.7);;
 $text-color: #333;
 $grey: rgb(200, 200, 200);
+$purple: rgb(82,72,156);
 
 @import './base.scss';
 @import './components.scss';

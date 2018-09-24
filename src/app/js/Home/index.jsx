@@ -15,7 +15,11 @@ class Home extends Component {
     this.state = {
       meetups: [],
       loading: true,
+      upcomingVisible: 6,
+      rsvpVisible: 3,
     }
+
+    this._updateLi = this._updateLi.bind(this)
   }
 
   componentDidMount() {
@@ -27,27 +31,26 @@ class Home extends Component {
     if (this.state.loading) {
       return <div className='spinner'>loading.....</div>
     }
-    // console.log('this.state.meetup', this.state.meetups)
-
 
     // 1 create upcoming list
     const sortedByDate = this.state.meetups.sort(this._sortByDate)
     const upcomingLi = [];
-    for (let i = 0; i < 6; i++) {
+    for (let i = 0; i < this.state.upcomingVisible; i++) {
       upcomingLi.push(sortedByDate[i]);
     }
-    // console.log('@index upcomingLi', upcomingLi)
 
     // 2 make updateLi() function and put it on the button
+    // this is wishing function, function to update the upcoming list
+
+
 
 
     // 3 create rsvp list
     const sortedByRsvp = this.state.meetups.sort(this._sortByRsvp)
     const rsvpLi = [];
-    for (let i = 0; i < 3; i++) {
+    for (let i = 0; i < this.state.rsvpVisible; i++) {
       rsvpLi.push(sortedByRsvp[i])
     }
-    // console.log('rsvpLi', rsvpLi)
 
     // create recommended list (in the future)
 
@@ -62,7 +65,7 @@ class Home extends Component {
           render={() => {
             return (
               <div className="wrapper">
-                <h4>Hello, {this.props.user ? this.props.user.email : 'tech peeps'} :)</h4>
+                <h4 className='tagline'>Hello, {this.props.user ? this.props.user.email : 'tech peeps'} :)</h4>
                 <div className='contents'>
                   <div className="map-container">
                     <Map
@@ -89,6 +92,13 @@ class Home extends Component {
         />
       </Switch >
     );
+  }
+
+  _updateLi() {
+    this.setState({
+      upcomingVisible: this.state.upcomingVisible + 3
+    }
+    )
   }
 
   _createList() {

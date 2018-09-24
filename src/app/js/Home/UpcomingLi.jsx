@@ -62,7 +62,7 @@ class UpcomingLi extends Component {
             <CardText className='secondary-color font-sm'>{this.props.date} | {this.props.time}</CardText>
             <CardText>Venue: {this.props.venue} <br />{this.props.description}</CardText>
             <Link className='card-link' to={`/meetup/${this.props.id}`}>
-              <Button outline color="secondary" size='sm' className=''>Detail</Button>
+              <Button outline size='sm' className='detail-button'>Detail</Button>
             </Link>
             <span className='pl-3'>
               <FontAwesomeIcon icon={faHeart}

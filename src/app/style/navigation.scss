@@ -1,5 +1,6 @@
 .nav-wrapper {
     display: flex;
+    background: $purple;
 }
 
 .nav-menu {
@@ -8,13 +9,15 @@
 
 
 .nav-link {
-    color: rgb(102, 102, 102);
+    color: white;
 
     &:visited {
-        color: rgb(102, 102, 102);
+        color: white;
     }
 
     &:hover {
-        color: rgb(102, 102, 102);
+        color: white;
     }
 }
+
+// rgb(102, 102, 102)
