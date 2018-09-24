@@ -8,18 +8,9 @@ const Navigation = props => {
             <Link className="link nav-link" to="/">
                 Home
                     </Link>
-            {props.user && (
-                <span>
-                    &nbsp; &nbsp; &nbsp;
-                            <Link className="link nav-link" to="/profile">
-                        Profile
-                            </Link>
-                </span>
-            )}
 
 
-
-            <div>
+            <div className='nav-menu'>
                 {props.user ? (
                     <Link className="link nav-link" to="/auth/logout">
                         Logout
@@ -34,7 +25,15 @@ const Navigation = props => {
                             </Link>
                         </span>
                     )}
+                {props.user && (
+                    <span>
+                        <Link className="link nav-link" to="/profile">
+                            Profile
+                            </Link>
+                    </span>
+                )}
             </div>
+
 
         </div>
 

@@ -7,9 +7,9 @@ import { faHeart } from '@fortawesome/free-solid-svg-icons'
 const Footer = () => {
   return (
     <div className='footer'>
-      &copy; This site was made by Yuki Sato 2018 with
+      &copy; Developed by Yuki Sato with
       <span>  </span><FontAwesomeIcon icon={faCoffee} />
-      <span> &  </span><FontAwesomeIcon icon={faHeart} />
+      <span> &  </span><FontAwesomeIcon icon={faHeart} /> in Berlin | 2018
     </div>
   );
 };
