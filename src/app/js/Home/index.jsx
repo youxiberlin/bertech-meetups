@@ -70,7 +70,7 @@ class Home extends Component {
                       rsvp={rsvpLi}
                     />
                   </div>
-                  <div><Upcoming meetups={upcomingLi} /></div>
+                  <div><Upcoming meetups={upcomingLi} user={this.props.user} /></div>
                   <div className='text-center pt-4'>
                     <Button onClick={this._updateLi} color="secondary">More</Button>
                   </div>
@@ -94,7 +94,6 @@ class Home extends Component {
   _createList() {
     const newArray = [];
     const meetupLi = this.props.meetup.events
-    console.log('meetupLi', meetupLi)
     meetupLi.forEach(el => {
       let placeholder = {
         name: 'unknown',

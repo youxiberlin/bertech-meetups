@@ -5,8 +5,6 @@ import { Row, Button } from 'reactstrap';
 
 class Upcoming extends Component {
   render() {
-    // console.log('@Upcoming: ', this.props.meetups)
-
     const upcomingLi = this.props.meetups.map((el, i) =>
       <UpcomingLi
         group={el.group.name}
@@ -17,6 +15,7 @@ class Upcoming extends Component {
         description={el.description.slice(3, 100)}
         key={i}
         id={el.id}
+        user={this.props.user}
       />
     )
     return (

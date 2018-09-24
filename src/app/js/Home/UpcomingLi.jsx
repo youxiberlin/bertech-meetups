@@ -6,6 +6,8 @@ import {
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHeart } from '@fortawesome/free-solid-svg-icons'
+import { Redirect } from 'react-router-dom'
+
 
 class UpcomingLi extends Component {
   constructor(props) {
@@ -14,6 +16,8 @@ class UpcomingLi extends Component {
       flipped: null,
       heart: null,
     }
+
+    this._saveCard = this._saveCard.bind(this)
   }
 
   mouseOut() {
@@ -32,11 +36,9 @@ class UpcomingLi extends Component {
     this.setState({ heart: true });
   }
 
-  saveCard() {
-    console.log("card is saved")
-  }
-
   render() {
+    // console.log('@UpcomingLi:', this.state.user)
+
     let flipped = ''
     if (this.state.flipped) {
       flipped += ' flipped'
@@ -49,7 +51,6 @@ class UpcomingLi extends Component {
 
     return (
       <Col sm="6" md="4" lg="3">
-
         <Card body className='m-1 p-0' >
           <CardBody
             className={`card-shadow ${flipped}`}
@@ -68,14 +69,24 @@ class UpcomingLi extends Component {
                 className={heartFlipped}
                 onMouseOut={() => this.heartOut()}
                 onMouseOver={() => this.heartOver()}
-                onClick={() => this.saveCard()}
+                onClick={() => this._saveCard()}
               />
             </span>
           </CardBody>
         </Card>
-
       </Col>
     );
+  }
+
+
+  _saveCard() {
+    if (!this.props.user) {
+      console.log('please sign-up/sign-in')
+      return <Redirect to="/auth/sign-in" />
+      // this Redirect doesn't work
+    } else {
+      console.log("card is saved")
+    }
   }
 }
 
