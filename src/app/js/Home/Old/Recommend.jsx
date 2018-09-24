@@ -3,7 +3,7 @@ import React from 'react';
 const Recommend = () => {
   return (
     <div>
-      recommend
+      recommended
     </div>
   );
 };

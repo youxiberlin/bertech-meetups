@@ -12,9 +12,9 @@ class Map extends Component {
   };
 
   render() {
-    console.log('@map', this.props.rsvp)
+    // console.log("@Map props:", this.props.meetups)
 
-    const mappedMarker = this.props.upcoming.map((el, i) =>
+    const mappedMarker = this.props.meetups.map((el, i) =>
       <MapMarker
         key={i}
         lat={el.venue.lat}
@@ -23,20 +23,9 @@ class Map extends Component {
         id={el.id}
       />
     )
-
-    const rsvpMarker = this.props.rsvp.map((el, i) =>
-      <MapMarker
-        key={i}
-        lat={el.venue.lat}
-        lng={el.venue.lon}
-        name={el.name}
-        id={el.id}
-        cat='rsvp'
-      />
-    )
-
 
     return (
+      // Important! Always set the container height explicitly
       <div style={{ height: '50vh', width: '100%' }}>
         <GoogleMapReact
           bootstrapURLKeys={{ key: 'AIzaSyAEUohQUFe7FN0U53ksF9RadGLmb4zpNE4' }}
@@ -44,11 +33,10 @@ class Map extends Component {
           defaultZoom={this.props.zoom}
         >
           {mappedMarker}
-          {rsvpMarker}
         </GoogleMapReact>
       </div>
     );
   }
+
 }
 
-export default Map;

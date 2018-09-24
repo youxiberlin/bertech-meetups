@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { mapStyle } from './mapStyle.js';
 import InfoWindow from './InfoWindow';
 
-
 class MapMarker extends Component {
   constructor(props) {
     super(props)
@@ -33,5 +32,3 @@ class MapMarker extends Component {
     );
   }
 }
-
-export default MapMarker;

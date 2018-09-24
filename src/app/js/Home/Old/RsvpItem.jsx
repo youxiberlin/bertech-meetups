@@ -5,6 +5,7 @@ import {
 } from 'reactstrap';
 import { Link } from 'react-router-dom'
 
+
 const RsvpItem = props => {
   return (
     <Col sm="6" md="4" lg="4">
