@@ -5,9 +5,7 @@ import {
 } from 'reactstrap';
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHeart } from '@fortawesome/free-solid-svg-icons'
-import { Redirect, Route } from 'react-router-dom'
-
+import { faHeart, faArrowCircleUp } from '@fortawesome/free-solid-svg-icons'
 
 class UpcomingLi extends Component {
   constructor(props) {
@@ -15,10 +13,7 @@ class UpcomingLi extends Component {
     this.state = {
       flipped: null,
       heart: null,
-      bookmark: []
     }
-
-    this._saveCard = this._saveCard.bind(this)
   }
 
   mouseOut() {
@@ -38,10 +33,6 @@ class UpcomingLi extends Component {
   }
 
   render() {
-    // console.log('this.state.bookmark', this.state.bookmark)
-    // console.log(this.state.user)
-    // console.log('@UpcomingLi:', this.props.user)
-
     let flipped = ''
     if (this.state.flipped) {
       flipped += ' flipped'
@@ -72,7 +63,14 @@ class UpcomingLi extends Component {
                 className={heartFlipped}
                 onMouseOut={() => this.heartOut()}
                 onMouseOver={() => this.heartOver()}
-                onClick={() => this._saveCard()}
+                onClick={() => this.props.saveCard(this.props.user, this.props.id)}
+              />
+
+            </span>
+            <span className='pl-3'>
+              <FontAwesomeIcon icon={faArrowCircleUp}
+                className='fa-arrow'
+                onClick={() => this.props.upvoteCard(this.props.user, this.props.id, 1)}
               />
             </span>
           </CardBody>
@@ -80,24 +78,6 @@ class UpcomingLi extends Component {
       </Col>
     );
   }
-
-  // _saveCard() {
-  //   if (!this.props.user) {
-  //     console.log('please sign-up/sign-in')
-  //     return < Redirect to="/auth/sign-in" />
-  //     // this Redirect doesn't work
-  //   } else {
-  //     const array = [...this.state.bookmark]
-  //     array.push(this.props.id)
-  //     this.setState({
-  //       bookmark: array
-  //     })
-
-
-
-  //   }
-  // }
-
 
 
 }

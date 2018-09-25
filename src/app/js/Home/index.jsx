@@ -55,7 +55,7 @@ class Home extends Component {
     return (
       < Switch >
         <Route path="/meetup/:id"
-          render={() => <Detail meetup={this.props.meetup.events} />}
+          render={() => <Detail meetup={this.state.meetups} />}
         />
         <Route exact path="/"
           render={() => {

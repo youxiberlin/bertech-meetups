@@ -7,9 +7,7 @@ const Detail = props => {
   const matchingMeetup = props.meetup.find(el =>
     el.id == props.match.params.id)
 
-  // console.log("@Detail matchingMeetup: ", matchingMeetup)
   const description = matchingMeetup.description.slice(3, 500)
-  // console.log('description: ', description)
 
   return (
     <div className="detail">

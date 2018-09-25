@@ -13,6 +13,7 @@ const config = require('./config')
 
 const apiRoutes = require('./routes/api')
 const appRoutes = require('./routes/app')
+const meetupRoutes = require('./routes/meetup')
 
 mongoose.connect(
     config.MONGODB_URI,
@@ -34,6 +35,7 @@ if (!config.IS_PRODUCTION) {
 server.use(express.static(path.join(__dirname, 'public')))
 server.use('/api', apiRoutes)
 server.use(appRoutes)
+server.use(meetupRoutes)
 
 mongoose.connection.on('connected', () => {
     console.log(chalk.blue.bold('Connected to Mongo!'))
