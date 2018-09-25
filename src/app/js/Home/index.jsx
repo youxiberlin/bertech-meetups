@@ -70,8 +70,8 @@ class Home extends Component {
                       Bertech Meetups
                     </h4>
                     <p className='pl-5 pt-1'>
-                      Hello, {this.props.user ? this.props.user.email : 'tech peeps'} in Berlin.<br></br>
-                      Discover your next favorite tech meetups.</p>
+                      Hello, {this.props.user ? this.props.user.email : 'tech peeps'}.<br></br>
+                      Discover your next favorite tech meetups in Berlin.</p>
                   </div>
                 </div>
                 <div className='contents'>

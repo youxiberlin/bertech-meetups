@@ -1,110 +1,28 @@
-  componentDidMount() {
-    axios
-      .get('https://ironbeer-api.herokuapp.com/beers/all')
-      .then(result => {
-        this.setState({ beers: result.data, loading: false })
-      })
-      .catch(console.error)
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
+const Recommend = require("../models/Recommend")
 
+const restSchema = new Schema({
+  name: String,
+  address: String,
+  phone: String,
+  yelpId: String,
+  location: { type: { type: String }, coordinates: [Number] },
+  category: {
+    type: [String],
+    enum: ["Pizza", "Burger", "Vegan", "Sushi", "German", "Indian", "Thai", "Vietnamese", "Craft beer", "Others"],
+  },
+  description: {
+    type: String,
+  },
+  picPath: String,
+  recommendation: [{
+    type: Schema.Types.ObjectId,
+    ref: "Recommend"
+  }]
+});
 
-const mappedBeer = this.state.beers.map((el, index) =>
-      <List
-        beer={el}
-        key={index}
-        index={index}
-        id={el._id}
-      />
-    )
+restSchema.index({ location: '2dsphere' });
 
-    ///==Home.jsx v1==///
-    import React from 'react';
-import Upcoming from './Upcoming';
-import Map from './Map';
-import Trending from './Trending';
-import Recommend from './Recommend';
-
-const Home = props => {
-    console.log(props.meetup.data.events)
-
-    const mappedUpcoming = props.meetup.data.events.map((el, id) =>
-        <Upcoming
-            group={el.group.name}
-            venue={el.venue.name}
-            date={el.local_date}
-            time={el.local_time}
-            description={el.description}
-            key={id}
-        />
-    )
-
-    return (
-        <div className="container">
-            <h1>Hello, {props.user ? props.user.email : 'Stranger'}!</h1>
-            <div className='contents'>
-                <div className='map-container'><Map /></div>
-                <div className='upcoming-container'>{mappedUpcoming}</div>
-                <div className='trending-container'><Trending /></div>
-                <div className='recommend-container'><Recommend /></div>
-            </div>
-        </div>
-    )
-}
-
-export default Home
-
-//// Upcoming.jsx v1
-import React from 'react';
-
-const Upcoming = props => {
-  return (
-    <div>
-      <ul>
-        <li>{props.group}</li>
-        <li>{props.venue}</li>
-        <li>{props.date}</li>
-        <li>{props.time}</li>
-        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil fuga corrupti impedit consequuntur voluptatibus molestias atque, dicta at vitae necessitatibus accusantium qui inventore est, aliquam, eveniet esse ullam sed dolorem aperiam! Eius quidem asperiores obcaecati qui repellat, voluptatem illo, voluptate impedit atque, accusamus quis. Numquam laudantium vitae molestiae maxime excepturi.</li>
-        <li>{props.description}</li>
-      </ul>
-    </div>
-  );
-};
-
-export default Upcoming;
-
-
-//===Google map API==//
-https://maps.googleapis.com/maps/api/js?key=AIzaSyAEUohQUFe7FN0U53ksF9RadGLmb4zpNE4&callback=initMap
-
-componentDidMount() {
-    axios
-      .get('https://ironbeer-api.herokuapp.com/beers/all')
-      .then(result => {
-        this.setState({ beers: result.data, loading: false })
-      })
-      .catch(console.error)
-  }
-
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAEUohQUFe7FN0U53ksF9RadGLmb4zpNE4&callback=initMap"
-    type="text/javascript"></script>
-
-
-    /////
-
-
-      props.meetups.forEach((item => {
-    newArray.push({
-      group: item.group.name,
-      // venue: item.venue.name,
-      description: item.description.slice(3, 50),
-      date: item.local_date,
-      time: item.local_time
-    })
-  }))
-
-
-///--- navbar
-
-$ npm i --save @fortawesome/fontawesome-svg-core
-$ npm i --save @fortawesome/free-solid-svg-icons
-$ npm i --save @fortawesome/react-fontawesome
+const Rest = mongoose.model('Rest', restSchema);
+module.exports = Rest;

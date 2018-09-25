@@ -19,9 +19,10 @@ const userSchema = new Schema({
         type: [String],
         enum: ["Javascript", "Blockchain", "Machine Learning", "Others"],
     },
-    bookmark: {
-        type: [String],
-    }
+    bookmark: [{
+        type: Schema.Types.ObjectId,
+        ref: "Meetup"
+    }],
 })
 
 module.exports = mongoose.model('User', userSchema)

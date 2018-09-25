@@ -86,6 +86,8 @@ class UpcomingLi extends Component {
       // this Redirect doesn't work
     } else {
       console.log("card is saved")
+
+      //
     }
   }
 }
