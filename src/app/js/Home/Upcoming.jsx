@@ -4,7 +4,15 @@ import { Row, Button } from 'reactstrap';
 
 
 class Upcoming extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      bookmark: []
+    }
+  }
+
   render() {
+    console.log('@upcomign: ', this.state.bookmark)
     const upcomingLi = this.props.meetups.map((el, i) =>
       <UpcomingLi
         group={el.group.name}

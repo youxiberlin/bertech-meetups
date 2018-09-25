@@ -38,9 +38,9 @@ class UpcomingLi extends Component {
   }
 
   render() {
-    console.log('this.state.bookmark', this.state.bookmark)
+    // console.log('this.state.bookmark', this.state.bookmark)
     // console.log(this.state.user)
-    console.log('@UpcomingLi:', this.props.user)
+    // console.log('@UpcomingLi:', this.props.user)
 
     let flipped = ''
     if (this.state.flipped) {
@@ -81,22 +81,22 @@ class UpcomingLi extends Component {
     );
   }
 
-  _saveCard() {
-    if (!this.props.user) {
-      console.log('please sign-up/sign-in')
-      return < Redirect to="/auth/sign-in" />
-      // this Redirect doesn't work
-    } else {
-      const array = [...this.state.bookmark]
-      array.push(this.props.id)
-      this.setState({
-        bookmark: array
-      })
+  // _saveCard() {
+  //   if (!this.props.user) {
+  //     console.log('please sign-up/sign-in')
+  //     return < Redirect to="/auth/sign-in" />
+  //     // this Redirect doesn't work
+  //   } else {
+  //     const array = [...this.state.bookmark]
+  //     array.push(this.props.id)
+  //     this.setState({
+  //       bookmark: array
+  //     })
 
 
 
-    }
-  }
+  //   }
+  // }
 
 
 
