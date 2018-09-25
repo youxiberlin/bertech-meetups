@@ -35,7 +35,7 @@ if (!config.IS_PRODUCTION) {
 server.use(express.static(path.join(__dirname, 'public')))
 server.use('/api', apiRoutes)
 server.use(appRoutes)
-server.use(meetupRoutes)
+server.use('/meetup', meetupRoutes)
 
 mongoose.connection.on('connected', () => {
     console.log(chalk.blue.bold('Connected to Mongo!'))

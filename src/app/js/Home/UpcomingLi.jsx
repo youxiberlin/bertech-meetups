@@ -43,6 +43,12 @@ class UpcomingLi extends Component {
       heartFlipped += ' heart-on'
     }
 
+    const br2nl = function (str) {
+      return str.replace(/(<br>|<p>|<\/p>|<br\/>)/gi, '\n');
+    };
+
+    const description = br2nl(this.props.description)
+
     return (
       <Col sm="6" md="4" lg="3">
         <Card body className='m-1 p-0' >
@@ -54,7 +60,7 @@ class UpcomingLi extends Component {
             <CardTitle>{this.props.name}</CardTitle>
             <CardSubtitle>{this.props.group}</CardSubtitle>
             <CardText className='secondary-color font-sm font-weight-bold'>{this.props.date} | {this.props.time}</CardText>
-            <CardText>Venue: {this.props.venue} <br />{this.props.description}</CardText>
+            <CardText>Venue: {this.props.venue} <br />{description}</CardText>
             <Link className='card-link' to={`/meetup/${this.props.id}`}>
               <Button outline size='sm' className='detail-button'>Detail</Button>
             </Link>

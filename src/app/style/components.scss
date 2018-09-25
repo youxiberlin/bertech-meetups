@@ -104,9 +104,11 @@
 
 .info-on{
     display:block;
-    width: 60px;
+    width: 100px;
+    color: $purple;
     background: rgba(255,255,255,0.5);
     padding: 3px;
+    font-size: 1rem;
 }
 
 .detail-button{

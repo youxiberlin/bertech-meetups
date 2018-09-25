@@ -13,15 +13,4 @@ router.get('/*', (req, res) => {
 
 
 
-// router.post('/bookmark', (req, res) => {
-
-//     User.findByIdAndUpdate(
-//         req.user._id,
-//         { $push: { bookmark: req.body.id } },
-//         { new: true }
-//     ).then((user) => {
-//         res.send(user);
-//     });
-// })
-
 module.exports = router

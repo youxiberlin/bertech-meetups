@@ -87,7 +87,7 @@ class Home extends Component {
                       <Button onClick={this._updateLi} color="secondary">More</Button>
                     </div>
                   </div>
-                  <div className='trending-container pt-5 pb-5'>
+                  <div className='trending-container pt-4 pb-5'>
                     <h3>Hot Meetups</h3>
                     <Rsvp meetups={rsvpLi} />
                   </div>

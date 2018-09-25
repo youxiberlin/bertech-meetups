@@ -19,8 +19,8 @@ class Upcoming extends Component {
   }
 
   render() {
-    console.log('@upcoming this.props.meetups: ', this.props.meetups)
-    console.log('@upcomign this.state.bookmark: ', this.state.bookmark)
+    // console.log('@upcoming this.props.meetups: ', this.props.user)
+    // console.log('@upcomign this.state.bookmark: ', this.state.bookmark)
     // console.log('@upcomign this.state.upvote: ', this.state.upvote)
 
     const upcomingLi = this.props.meetups.map((el, i) =>
@@ -31,7 +31,6 @@ class Upcoming extends Component {
         date={el.local_date}
         time={el.local_time}
         description={el.description.slice(3, 100)}
-        // description={el.description}
         key={i}
         id={el.id}
         user={this.props.user}
@@ -50,7 +49,6 @@ class Upcoming extends Component {
     if (!user) {
       console.log('please sign in')
       this.props.history.push("/auth/sign-in")
-      // return < Redirect to="/auth/sign-in" />
     } else {
       const array = [...this.state.bookmark]
       array.push(value)
@@ -61,7 +59,10 @@ class Upcoming extends Component {
 
     // this doesn't work?
     api.post('/meetup/bookmark',
-      { bookmark: this.state.bookmark })
+      {
+        bookmark: this.state.bookmark,
+        user: this.props.user
+      })
       .then(data => {
         console.log(data)
       })
@@ -77,10 +78,11 @@ class Upcoming extends Component {
       // console.log(user, meetup, voteNum)
       const arr = [...this.state.upvote]
       arr.push({
-        number: voteNum,
-        meetup: meetup
+        meetup: meetup,
+        vote: voteNum,
       })
 
+      console.log('arr', arr)
       this.setState({
         upvote: arr
       })

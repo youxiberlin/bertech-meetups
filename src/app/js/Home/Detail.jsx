@@ -7,7 +7,16 @@ const Detail = props => {
   const matchingMeetup = props.meetup.find(el =>
     el.id == props.match.params.id)
 
-  const description = matchingMeetup.description.slice(3, 500)
+  const text = matchingMeetup.description.slice(3, 500)
+
+  //   function br2nl(str) {
+  //     return str.replace(/<br\s*\/?>/mg,"\n");
+  // }
+
+  const br2nl = function (str) {
+    return str.replace(/(<br>|<p>|<\/p>|<br\/>)/gi, '\n');
+  };
+  const newText = br2nl(text);
 
   return (
     <div className="detail">
@@ -18,7 +27,8 @@ const Detail = props => {
         <p>at {matchingMeetup.local_time} on {matchingMeetup.local_date}</p>
         <p>{matchingMeetup.yes_rsvp_count} peeps are going.</p>
       </div>
-      <p className='mt-3'>{description} ....</p>
+      {/* <p className='mt-3'>{text} ....</p> */}
+      <p className='mt-3'>{newText} ....</p>
       <div className='text-center mb-5'>
         <a href={`${matchingMeetup.link}`}>
           <Button>More & Rsvp on meetup.com</Button>
