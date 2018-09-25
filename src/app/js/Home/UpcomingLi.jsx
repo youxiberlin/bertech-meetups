@@ -6,7 +6,7 @@ import {
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHeart } from '@fortawesome/free-solid-svg-icons'
-import { Redirect } from 'react-router-dom'
+import { Redirect, Route } from 'react-router-dom'
 
 
 class UpcomingLi extends Component {
@@ -15,6 +15,7 @@ class UpcomingLi extends Component {
     this.state = {
       flipped: null,
       heart: null,
+      bookmark: []
     }
 
     this._saveCard = this._saveCard.bind(this)
@@ -37,7 +38,9 @@ class UpcomingLi extends Component {
   }
 
   render() {
-    // console.log('@UpcomingLi:', this.state.user)
+    console.log('this.state.bookmark', this.state.bookmark)
+    // console.log(this.state.user)
+    console.log('@UpcomingLi:', this.props.user)
 
     let flipped = ''
     if (this.state.flipped) {
@@ -78,19 +81,25 @@ class UpcomingLi extends Component {
     );
   }
 
-
   _saveCard() {
     if (!this.props.user) {
       console.log('please sign-up/sign-in')
-      return <Redirect to="/auth/sign-in" />
+      return < Redirect to="/auth/sign-in" />
       // this Redirect doesn't work
     } else {
-      console.log("card is saved")
+      const array = [...this.state.bookmark]
+      array.push(this.props.id)
+      this.setState({
+        bookmark: array
+      })
 
-      //
+
+
     }
   }
-}
 
+
+
+}
 export default UpcomingLi;
 

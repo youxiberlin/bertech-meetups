@@ -26,3 +26,33 @@ restSchema.index({ location: '2dsphere' });
 
 const Rest = mongoose.model('Rest', restSchema);
 module.exports = Rest;
+
+
+var joined = this.state.myArray.concat('new value');
+this.setState({ myArray: joined })
+
+//var colors = ['red', 'green', 'blue'];
+var refColors = [...colors, 'yellow'];
+//colors => ['red', 'green', 'blue']
+//refColors => ['red', 'green', 'blue', 'yellow']
+
+
+addNote(newNote) {
+    this.setState({ toDoNotes: [...this.state.toDoNotes, newNote]})
+  }
+
+
+
+_deleteActor(index) {
+        console.log(index)
+        const array = [...this.state.actors]
+        array.splice(index, 1)
+        this.setState({
+            actors: array
+        })
+        }
+
+
+this.setState(prevState => ({
+  arrayvar: [...prevState.arrayvar, newelement]
+}))
