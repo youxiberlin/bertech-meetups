@@ -126,7 +126,8 @@ class Home extends Component {
         local_date: el.local_date,
         group: el.group,
         venue: el.venue ? el.venue : placeholder,
-        yes_rsvp_count: el.yes_rsvp_count
+        yes_rsvp_count: el.yes_rsvp_count,
+        link: el.link
       })
     })
     this.setState({

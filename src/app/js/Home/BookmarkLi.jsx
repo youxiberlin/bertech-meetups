@@ -5,8 +5,6 @@ const BookmarkLi = props => {
   return (
     <div>
       <Link to={`/meetup/${props.id}`}>
-
-
         {props.name}
       </Link>
 

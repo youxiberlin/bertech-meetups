@@ -29,7 +29,10 @@ class Upcoming extends Component {
 
   render() {
     console.log('@upcomign this.state.bookmark: ', this.state.bookmark)
+    console.log('@upcomign this.props.meetups: ', this.props.meetups)
 
+
+    // if the meetup 
 
     const upcomingLi = this.props.meetups.map((el, i) =>
       <UpcomingLi
@@ -44,6 +47,7 @@ class Upcoming extends Component {
         user={this.props.user}
         saveCard={this._saveCard}
         upvoteCard={this._upvoteCard}
+        bookmarked={this.state.bookmark}
       />
     )
     return (

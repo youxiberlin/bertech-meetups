@@ -33,6 +33,12 @@ class UpcomingLi extends Component {
 
 
   render() {
+    // console.log('upcomingLi bookmarked: ', this.props.bookmarked)
+    // console.log('upcomingLi meetup id: ', this.props.id)
+
+    //identifying bookmarked cards
+    // card の id(meetup id) が bookmarkedに含まれているか
+
     // card and heart toggling
     let flipped = ''
     if (this.state.flipped) {
