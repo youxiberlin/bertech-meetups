@@ -21,6 +21,7 @@ class Upcoming extends Component {
   componentDidMount() {
     api.get("/api/meetup/bookmark")
       .then(allBookmarks => {
+
         this.setState({
           bookmark: allBookmarks
         })
@@ -28,9 +29,8 @@ class Upcoming extends Component {
   }
 
   render() {
-    // console.log('@upcoming this.props.meetups: ', this.props.user)
     console.log('@upcomign this.state.bookmark: ', this.state.bookmark)
-    // console.log('@upcomign this.state.upvote: ', this.state.upvote)
+
 
     const upcomingLi = this.props.meetups.map((el, i) =>
       <UpcomingLi
@@ -63,8 +63,10 @@ class Upcoming extends Component {
           bookmark: value
         })
         .then(data => {
+          let unique = [...new Set(data)]
+          unique.shift();
           this.setState({
-            bookmark: data
+            bookmark: unique
           })
         })
     }
