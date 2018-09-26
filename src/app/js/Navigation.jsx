@@ -4,12 +4,9 @@ import { Link } from 'react-router-dom'
 const Navigation = props => {
     return (
         <div className='nav-wrapper'>
-
             <Link className="link nav-link" to="/">
-                Home
-                    </Link>
-
-
+                <p>B</p>
+            </Link>
             <div className='nav-menu'>
                 {props.user ? (
                     <Link className="link nav-link" to="/auth/logout">

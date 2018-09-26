@@ -11,13 +11,25 @@ router.get('/', (req, res) => {
 })
 
 router.post('/bookmark', (req, res) => {
-  User.findByIdAndUpdate(
-    req.user._id,
-    { $push: { bookmark: req.body.bookmark } },
-    { new: true }
-  ).then((user) => {
-    res.send(user.bookmark);
-  });
+  User.findById(req.user._id)
+    .then(user => {
+      if (user.bookmark.map(el => el.toString()).includes(req.body.bookmark)) {
+        return User.findByIdAndUpdate(
+          req.user._id,
+          { $pull: { bookmark: req.body.bookmark } },
+          { new: true }
+        )
+      } else {
+        return User.findByIdAndUpdate(
+          req.user._id,
+          { $push: { bookmark: req.body.bookmark } },
+          { new: true }
+        )
+      }
+    })
+    .then((user) => {
+      res.send(user.bookmark);
+    });
 })
 
 router.get("/bookmark", (req, res) => {
