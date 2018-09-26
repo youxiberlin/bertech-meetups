@@ -63,7 +63,7 @@ class Home extends Component {
               <div className="wrapper">
                 <div className="header">
                   <div className='nav-border'></div>
-                  <div className="ml-5 mt-4 mb-4">
+                  <div className="mt-4">
                     <FontAwesomeIcon className="code-icon" icon={faSearch} />
                     {/* <FontAwesomeIcon className="code-icon" icon={faCode} /> */}
                     <h4 className='tagline ml-3'>

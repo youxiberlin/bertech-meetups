@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand:400,500,700');
+
+.header {
+  // color: rgb(100, 100, 100);
+  color: white;
+  font-family: Quicksand;
+  font-weight: 500;
+  background-image: linear-gradient(to right, #9795f0 0%, #fbc8d4 80%);
+  height: 18vh;
+  text-align: center;
+
+  .nav-border{
+      height: 1px;
+      width: 100%;
+      background: linear-gradient(to right, #9795f0 0%, #fbc8d4 100%);
+      }
+
+  .code-icon{
+      font-size: 2rem;
+      color: white;
+  }
+
+  h4{
+      // text-align: center;
+      font-family: Quicksand;
+      font-weight: 700;
+      color: white;
+      margin: auto;
+      display: inline;
+      font-size: 2.2rem;
+  }
+}
