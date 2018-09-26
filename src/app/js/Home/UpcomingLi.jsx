@@ -16,23 +16,26 @@ class UpcomingLi extends Component {
     }
   }
 
+  //card and heart toggling functions
   mouseOut() {
     this.setState({ flipped: false });
   }
-
   mouseOver() {
     this.setState({ flipped: true });
   }
-
   heartOut() {
     this.setState({ heart: false });
   }
-
   heartOver() {
     this.setState({ heart: true });
   }
 
+
+
   render() {
+    // console.log(this.props.)
+
+    // card and heart toggling
     let flipped = ''
     if (this.state.flipped) {
       flipped += ' flipped'
@@ -43,10 +46,10 @@ class UpcomingLi extends Component {
       heartFlipped += ' heart-on'
     }
 
+    // to replace p and br tags with n
     const br2nl = function (str) {
       return str.replace(/(<br>|<p>|<\/p>|<br\/>)/gi, '\n');
     };
-
     const description = br2nl(this.props.description)
 
     return (
@@ -76,7 +79,7 @@ class UpcomingLi extends Component {
             <span className='pl-3'>
               <FontAwesomeIcon icon={faArrowCircleUp}
                 className='fa-arrow'
-                onClick={() => this.props.upvoteCard(this.props.user, this.props.id, 1)}
+                onClick={() => this.props.upvoteCard(this.props.user, this.props.id)}
               />
             </span>
           </CardBody>

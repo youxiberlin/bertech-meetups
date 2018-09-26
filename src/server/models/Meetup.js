@@ -4,6 +4,9 @@ const Schema = mongoose.Schema
 const meetupSchema = new Schema({
   name: String,
   meetupId: String,
+  venue: String,
+  date: String,
+  time: String,
   description: {
     type: String,
   },

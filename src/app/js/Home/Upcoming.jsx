@@ -21,7 +21,7 @@ class Upcoming extends Component {
   render() {
     // console.log('@upcoming this.props.meetups: ', this.props.user)
     // console.log('@upcomign this.state.bookmark: ', this.state.bookmark)
-    // console.log('@upcomign this.state.upvote: ', this.state.upvote)
+    console.log('@upcomign this.state.upvote: ', this.state.upvote)
 
     const upcomingLi = this.props.meetups.map((el, i) =>
       <UpcomingLi
@@ -51,7 +51,9 @@ class Upcoming extends Component {
       this.props.history.push("/auth/sign-in")
     } else {
       const array = [...this.state.bookmark]
+      // value pushed into the array is the meetup id
       array.push(value)
+      console.log('this.state.bookmark', this.state.bookmark)
       this.setState({
         bookmark: array
       })
