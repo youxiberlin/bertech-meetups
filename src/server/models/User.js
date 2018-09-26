@@ -20,8 +20,7 @@ const userSchema = new Schema({
         enum: ["Javascript", "Blockchain", "Machine Learning", "Others"],
     },
     bookmark: [{
-        type: Schema.Types.ObjectId,
-        ref: "Meetup"
+        type: String
     }],
 })
 

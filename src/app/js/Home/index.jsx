@@ -64,11 +64,13 @@ class Home extends Component {
                 <div className="header">
                   <div className='nav-border'></div>
                   <div className="mt-4">
-                    <FontAwesomeIcon className="code-icon" icon={faSearch} />
-                    {/* <FontAwesomeIcon className="code-icon" icon={faCode} /> */}
+                    {/* <FontAwesomeIcon className="code-icon" icon={faSearch} /> */}
                     <h4 className='tagline ml-3'>
-                      Bertech Meetups
+                      Bertech Meetu
+                    <FontAwesomeIcon className="code-icon" icon={faSearch} />
+                      s
                     </h4>
+                    {/* <FontAwesomeIcon className="code-icon" icon={faSearch} /> */}
                     <p className='pl-5 pt-1'>
                       Hello, {this.props.user ? this.props.user.email : 'tech peeps'}.<br></br>
                       Discover your next favorite tech meetups in Berlin.</p>

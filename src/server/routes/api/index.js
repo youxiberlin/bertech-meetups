@@ -3,6 +3,7 @@ const router = express.Router()
 const axios = require('axios')
 
 const authRoutes = require('./auth')
+const meetupRoutes = require('./meetup')
 const { userMiddleware, checkLoggedIn } = require('../../utils/middleware')
 
 router.use(userMiddleware)
@@ -21,6 +22,7 @@ router.get('/protected', checkLoggedIn, (req, res) => {
 })
 
 router.use('/auth', authRoutes)
+router.use('/meetup', meetupRoutes)
 
 router.use((req, res) => {
     res.status(404).send({ error: 'not-found' })

@@ -33,8 +33,6 @@ class UpcomingLi extends Component {
 
 
   render() {
-    // console.log(this.props.)
-
     // card and heart toggling
     let flipped = ''
     if (this.state.flipped) {
@@ -72,16 +70,16 @@ class UpcomingLi extends Component {
                 className={heartFlipped}
                 onMouseOut={() => this.heartOut()}
                 onMouseOver={() => this.heartOver()}
-                onClick={() => this.props.saveCard(this.props.user, this.props.id)}
+                onClick={() => this.props.saveCard(this.props.id)}
               />
 
             </span>
-            <span className='pl-3'>
+            {/* <span className='pl-3'>
               <FontAwesomeIcon icon={faArrowCircleUp}
                 className='fa-arrow'
                 onClick={() => this.props.upvoteCard(this.props.user, this.props.id)}
               />
-            </span>
+            </span> */}
           </CardBody>
         </Card>
       </Col>
