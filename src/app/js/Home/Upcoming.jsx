@@ -71,11 +71,8 @@ class Upcoming extends Component {
           bookmark: value
         })
         .then(data => {
-          let unique = [...new Set(data)]
-          unique.shift();
-          console.log('hello I am unique')
           this.setState({
-            bookmark: unique
+            bookmark: data
           })
         })
     }

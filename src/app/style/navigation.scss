@@ -1,8 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Quicksand:400,500,700');
 
 .nav-wrapper {
+    position: absolute;
+    width: 100%;
     display: flex;
-    background: white;
+    background: rgba(255,255,255, 0.9);
     font-size: 0.9rem;
     line-height: 0.1rem;
     padding-top: 10px;

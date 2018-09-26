@@ -60,9 +60,9 @@ class Home extends Component {
           render={() => {
             return (
               <div className="wrapper">
-                <div className="header">
-                  <div className='nav-border'></div>
-                  <div className="mt-4">
+                <div className="header pt-3">
+                  {/* <div className='nav-border'></div> */}
+                  <div className="pt-5">
                     {/* <FontAwesomeIcon className="code-icon" icon={faSearch} /> */}
                     <h4 className='tagline ml-3'>
                       Bertech Meetu

@@ -13,6 +13,7 @@ router.get('/', (req, res) => {
 router.post('/bookmark', (req, res) => {
   User.findById(req.user._id)
     .then(user => {
+      console.log(req.body)
       if (user.bookmark.map(el => el.toString()).includes(req.body.bookmark)) {
         return User.findByIdAndUpdate(
           req.user._id,

@@ -17,7 +17,7 @@ class Bookmark extends Component {
       }
     }
 
-    console.log('@Bookmark.jsx bookmarkLi: ', bookmarkLi)
+    // console.log('@Bookmark.jsx bookmarkLi: ', bookmarkLi)
 
     const mappedBookmark = bookmarkLi.map((el, i) =>
       <BookmarkLi

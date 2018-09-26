@@ -1,7 +1,17 @@
 .detail {
-  // background: #eee;
-  width: 90vw;
+  width: 80vw;
   display:block;
   margin: auto;
-  margin-top: 5vh;
+
+  .detail-content {
+    margin-top: 5vh;
+
+    h1 {
+      color: $purple;
+    }
+
+    h4{
+      color: #333;
+    }
+  }
 }
