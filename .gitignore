@@ -3,3 +3,4 @@ dist/
 .cache/
 src/server/public/app/
 src/app/js/sandbox.txt
+src/server/sandbox.txt
