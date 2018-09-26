@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import UpcomingLi from './UpcomingLi'
 import { Row } from 'reactstrap';
-import { Redirect } from 'react-router-dom'
 import api from '../utils/api'
 import { withRouter } from 'react-router'
+import Bookmark from './Bookmark';
 
 
 class Upcoming extends Component {
@@ -21,7 +21,6 @@ class Upcoming extends Component {
   componentDidMount() {
     api.get("/api/meetup/bookmark")
       .then(allBookmarks => {
-
         this.setState({
           bookmark: allBookmarks
         })
@@ -48,9 +47,18 @@ class Upcoming extends Component {
       />
     )
     return (
-      <Row className='mt-3'>
-        {upcomingLi}
-      </Row>
+      <div>
+        <Row className='mt-3'>
+          {upcomingLi}
+        </Row>
+        <div className='bookmark-container pt-5 pb-5'>
+          <h3>Bookmark</h3>
+          <Bookmark
+            bookmark={this.state.bookmark}
+            meetup={this.props.meetups}
+          />
+        </div>
+      </div>
     );
   }
 
@@ -65,6 +73,7 @@ class Upcoming extends Component {
         .then(data => {
           let unique = [...new Set(data)]
           unique.shift();
+          console.log('hello I am unique')
           this.setState({
             bookmark: unique
           })
