@@ -70,7 +70,7 @@ class UpcomingLi extends Component {
                 className={heartFlipped}
                 onMouseOut={() => this.heartOut()}
                 onMouseOver={() => this.heartOver()}
-                onClick={() => this.props.saveCard(this.props.id)}
+                onClick={() => this.props.saveCard(this.props.user, this.props.id)}
               />
 
             </span>

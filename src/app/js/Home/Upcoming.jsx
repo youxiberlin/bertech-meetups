@@ -15,7 +15,7 @@ class Upcoming extends Component {
     }
 
     this._saveCard = this._saveCard.bind(this)
-    this._upvoteCard = this._upvoteCard.bind(this)
+    // this._upvoteCard = this._upvoteCard.bind(this)
   }
 
   componentDidMount() {
@@ -54,7 +54,7 @@ class Upcoming extends Component {
     );
   }
 
-  _saveCard(value) {
+  _saveCard(user, value) {
     if (!user) {
       this.props.history.push("/auth/sign-in")
     } else {
