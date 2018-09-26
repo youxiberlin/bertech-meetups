@@ -7,7 +7,6 @@ import Detail from './Detail';
 import { Route, Switch } from 'react-router-dom'
 import { Button } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCode } from '@fortawesome/free-solid-svg-icons'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
 
 class Home extends Component {
@@ -60,17 +59,15 @@ class Home extends Component {
           render={() => {
             return (
               <div className="wrapper">
-                <div className="header pt-3">
-                  {/* <div className='nav-border'></div> */}
+                <div className="header pt-3 pb-3">
                   <div className="pt-5">
-                    {/* <FontAwesomeIcon className="code-icon" icon={faSearch} /> */}
-                    <h4 className='tagline ml-3'>
+
+                    <h4 className='tagline'>
                       Bertech Meetu
                     <FontAwesomeIcon className="code-icon" icon={faSearch} />
                       s
                     </h4>
-                    {/* <FontAwesomeIcon className="code-icon" icon={faSearch} /> */}
-                    <p className='pl-5 pt-1'>
+                    <p className='pt-1'>
                       Hello, {this.props.user ? this.props.user.email : 'tech peeps'}.<br></br>
                       Discover your next favorite tech meetups in Berlin.</p>
                   </div>

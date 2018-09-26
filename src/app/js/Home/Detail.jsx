@@ -9,9 +9,6 @@ const Detail = props => {
 
   const text = matchingMeetup.description.slice(3, 500)
 
-  //   function br2nl(str) {
-  //     return str.replace(/<br\s*\/?>/mg,"\n");
-  // }
 
   const br2nl = function (str) {
     return str.replace(/(<br>|<p>|<\/p>|<br\/>)/gi, '\n');
