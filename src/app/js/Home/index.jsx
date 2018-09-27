@@ -37,13 +37,16 @@ class Home extends Component {
     window.onscroll = function () { mapFix() };
     const mapel = document.getElementById('map')
     const content = document.getElementById('list-content')
+
+    var sticky = mapel.offsetTop;
+
     function mapFix() {
-      if (window.pageYOffset > 195) {
+      if (window.pageYOffset > sticky) {
         mapel.classList.add('sticky');
         content.classList.add('sticky-content');
       } else {
         mapel.classList.remove('sticky');
-        content.classList.add('sticky-content');
+        content.classList.remove('sticky-content');
       }
     }
 
