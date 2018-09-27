@@ -16,8 +16,7 @@ class DetailMap extends Component {
       lat: this.props.meetup.venue.lat,
       lng: this.props.meetup.venue.lon
     }
-    console.log(this.props.meetup)
-    console.log(center)
+
     return (
       <div style={{ height: '20vh', width: '50vw' }}>
         <GoogleMapReact
