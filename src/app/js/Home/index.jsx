@@ -34,20 +34,18 @@ class Home extends Component {
   }
 
   handleScroll() {
-    window.onscroll = function () { mapFix() };
     const mapel = document.getElementById('map')
     const content = document.getElementById('list-content')
 
+    if (!mapel || !content) return
     var sticky = mapel.offsetTop;
 
-    function mapFix() {
-      if (window.pageYOffset > sticky) {
-        mapel.classList.add('sticky');
-        content.classList.add('sticky-content');
-      } else {
-        mapel.classList.remove('sticky');
-        content.classList.remove('sticky-content');
-      }
+    if (window.pageYOffset > sticky) {
+      mapel.classList.add('sticky');
+      content.classList.add('sticky-content');
+    } else {
+      mapel.classList.remove('sticky');
+      content.classList.remove('sticky-content');
     }
 
   }
@@ -72,8 +70,6 @@ class Home extends Component {
     }
 
     // create recommended list (in the future)
-
-
 
     return (
       < Switch >

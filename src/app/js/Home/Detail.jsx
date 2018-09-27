@@ -4,6 +4,7 @@ import { Button } from 'reactstrap';
 
 
 const Detail = props => {
+
   const matchingMeetup = props.meetup.find(el =>
     el.id == props.match.params.id)
 
