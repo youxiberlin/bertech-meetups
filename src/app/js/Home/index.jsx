@@ -83,7 +83,6 @@ class Home extends Component {
               <div className="wrapper">
                 <div className="header pt-3 pb-3">
                   <div className="pt-5">
-
                     <h4 className='tagline'>
                       Bertech Meetu
                     <FontAwesomeIcon className="code-icon" icon={faSearch} />
