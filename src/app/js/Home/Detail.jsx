@@ -1,6 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router'
 import { Button } from 'reactstrap';
+import DetailMap from './DetailMap';
 
 
 const Detail = props => {
@@ -30,6 +31,12 @@ const Detail = props => {
               <Button >More & Rsvp on meetup.com</Button>
             </a>
           </div>
+          <div className='detail-map'>
+            <DetailMap
+              meetup={matchingMeetup}
+            />
+          </div>
+
         </div>
       </div>
     </div>
