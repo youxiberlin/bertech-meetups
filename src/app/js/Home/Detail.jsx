@@ -9,11 +9,10 @@ const Detail = props => {
 
   const text = matchingMeetup.description.slice(3, 500)
 
-
-  const br2nl = function (str) {
-    return str.replace(/(<br>|<p>|<\/p>|<br\/>)/gi, '\n');
-  };
-  const newText = br2nl(text);
+  // const br2nl = function (str) {
+  //   return str.replace(/(<br>|<p>|<\/p>|<br\/>)/gi, '\n');
+  // };
+  // const newText = br2nl(text);
 
   return (
     <div>
@@ -25,8 +24,7 @@ const Detail = props => {
           <p>at {matchingMeetup.local_time} on {matchingMeetup.local_date}</p>
           <h5>{matchingMeetup.yes_rsvp_count} peeps are going.</h5>
         </div>
-        {/* <p className='mt-3'>{text} ....</p> */}
-        <p className='mt-4 mb-5'>{newText} ....</p>
+        <div className='mt-3' dangerouslySetInnerHTML={{ __html: text }}></div>
         <div className='text-center mb-5'>
           <a href={`${matchingMeetup.link}`}>
             <Button>More & Rsvp on meetup.com</Button>

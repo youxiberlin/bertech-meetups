@@ -113,10 +113,6 @@ class Home extends Component {
                     <h3>Hot Meetups</h3>
                     <Rsvp meetups={rsvpLi} />
                   </div>
-                  {/* <div className='recommend-container pt-5 pb-5'>
-                    <h3>Recommended</h3>
-                    <Recommend />
-                  </div> */}
                 </div>
               </div>
             )
