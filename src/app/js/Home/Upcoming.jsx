@@ -57,7 +57,6 @@ class Upcoming extends Component {
         user={this.props.user}
         saveCard={this._saveCard}
         upvoteCard={this._upvoteCard}
-      // bookmarked={this.state.bookmark}
       // bookmark={bookmarked}
       />
     )

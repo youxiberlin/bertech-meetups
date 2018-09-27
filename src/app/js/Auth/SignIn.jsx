@@ -10,35 +10,37 @@ class SignIn extends React.Component {
     render() {
         return (
             <div className="container">
-                <h1>SignIn</h1>
-                <input
-                    type="email"
-                    value={this.props.email}
-                    onChange={evt => this.props.handleInputChange('email', evt.target.value)}
-                    className="input"
-                    placeholder="E-Mail"
-                />
-                <br />
-                <br />
-                <input
-                    type="password"
-                    value={this.props.password}
-                    onChange={evt => this.props.handleInputChange('password', evt.target.value)}
-                    className="input"
-                    placeholder="Password"
-                />
-                <br />
-                <br />
-                <button className="button" onClick={() => this.props.sign('in')}>
-                    Sign In
+                <div className="profile-container pt-5">
+                    <h1>SignIn</h1>
+                    <input
+                        type="email"
+                        value={this.props.email}
+                        onChange={evt => this.props.handleInputChange('email', evt.target.value)}
+                        className="input"
+                        placeholder="E-Mail"
+                    />
+                    <br />
+                    <br />
+                    <input
+                        type="password"
+                        value={this.props.password}
+                        onChange={evt => this.props.handleInputChange('password', evt.target.value)}
+                        className="input"
+                        placeholder="Password"
+                    />
+                    <br />
+                    <br />
+                    <button className="button" onClick={() => this.props.sign('in')}>
+                        Sign In
                 </button>
-                <br />
-                <br />
-                <p>{this.props.error}</p>
-                <div className="separator" />
-                <Link className="link" to="/auth/sign-up">
-                    Don't have an account yet? Sign up instead!
+                    <br />
+                    <br />
+                    <p>{this.props.error}</p>
+                    <div className="separator" />
+                    <Link className="link" to="/auth/sign-up">
+                        Don't have an account yet? Sign up instead!
                 </Link>
+                </div>
             </div>
         )
     }
