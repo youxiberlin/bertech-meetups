@@ -6,7 +6,7 @@ class Profile extends Component {
         if (!this.props.user) return <Redirect to="/auth/sign-in" /> // this is actually the protection
         // console.log(this.props.user)
         return (
-            <div className="container mt-5 mb-5 pt-5">
+            <div className="container mb-5 pt-5">
                 <div className='profile-container'>
                     <div className="profile-pic">
                         <img src={this.props.user.profilePicture} alt="" />
