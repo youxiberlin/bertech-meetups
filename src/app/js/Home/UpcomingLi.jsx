@@ -13,7 +13,7 @@ class UpcomingLi extends Component {
     this.state = {
       flipped: null,
       heart: null,
-      // savedHeart: false,
+      savedHeart: false,
     }
 
     // this.toggleOn = this.toggleOn.bind(this)
@@ -32,23 +32,23 @@ class UpcomingLi extends Component {
   heartOver() {
     this.setState({ heart: true });
   }
-  // toggleOn() {
-  //   let toggle;
-  //   if (!this.state.savedHeart) {
-  //     toggle = true;
-  //   } else {
-  //     toggle = false;
-  //   }
-  //   this.setState({ savedHeart: toggle })
-  // }
+  handleClick = () => {
+    this.props.saveCard(this.props.user, this.props.id);
+    this.toggle();
 
+  }
+  toggle = () => {
+    let toggle;
+    if (!this.state.savedHeart) {
+      toggle = true;
+    } else {
+      toggle = false;
+    }
+    this.setState({ savedHeart: toggle })
+    console.log('this.state.savedHeart', this.state.savedHeart)
+  }
 
   render() {
-    // console.log('upcomingLi: ', this.props.bookmark)
-    // console.log('heart is on', this.state.savedHeart)
-    // console.log('upcomingLi bookmarked: ', this.props.bookmarked)
-    // console.log('upcomingLi meetup id: ', this.props.id)
-
     // card and heart toggling
     let flipped = ''
     if (this.state.flipped) {
@@ -61,7 +61,7 @@ class UpcomingLi extends Component {
     }
 
     if (this.state.savedHeart) {
-      heartFlipped += ' heart-on'
+      heartFlipped += ' heart-saved'
     }
 
 
@@ -91,10 +91,8 @@ class UpcomingLi extends Component {
                 className={heartFlipped}
                 onMouseOut={() => this.heartOut()}
                 onMouseOver={() => this.heartOver()}
-                onClick={() => this.props.saveCard(this.props.user, this.props.id)}
-              // onClick={() => this.toggleOn()}
+                onClick={this.handleClick}
               />
-
             </span>
           </CardBody>
         </Card>
