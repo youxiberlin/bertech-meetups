@@ -33,17 +33,6 @@ class Upcoming extends Component {
     console.log('@upcomign this.props.meetups: ', this.props.meetups)
 
     const bookmark = this.state.bookmark;
-    const meetups = this.props.meetups;
-    const bookmarkLi = [];
-    // const newArr = []
-
-    // for (let i = 0; i < meetups.length; i++) {
-    //   for (let j = 0; j < bookmark.length; j++) {
-    //     if (meetups[i].id == bookmark[j]) {
-    //       newArr.push(meetups[i])
-    //     }
-    //   }
-    // }
 
 
     const upcomingLi = this.props.meetups.map((el, i) =>
@@ -59,7 +48,7 @@ class Upcoming extends Component {
         user={this.props.user}
         saveCard={this._saveCard}
         upvoteCard={this._upvoteCard}
-      // bookmark={bookmarked}
+        bookmarked={bookmark.includes(el.id)}
       />
     )
     return (

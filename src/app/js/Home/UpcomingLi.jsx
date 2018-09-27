@@ -15,8 +15,6 @@ class UpcomingLi extends Component {
       heart: null,
       savedHeart: false,
     }
-
-    // this.toggleOn = this.toggleOn.bind(this)
   }
 
   //card and heart toggling functions
@@ -60,10 +58,9 @@ class UpcomingLi extends Component {
       heartFlipped += ' heart-on'
     }
 
-    if (this.state.savedHeart) {
+    if (this.props.bookmarked) {
       heartFlipped += ' heart-saved'
     }
-
 
     // to replace p and br tags with n
     const br2nl = function (str) {
