@@ -1,18 +1,20 @@
-.detail {
-  width: 80vw;
-  display:block;
-  margin: auto;
-
-
-  .detail-content {
-    margin-top: 5vh;
-
-    h1 {
-      color: $purple;
-    }
-
-    h4{
-      color: #333;
-    }
+.detail-wrapper{
+  .detail-header{
+    // background-image: linear-gradient(to right, #9795f0 0%, #fbc8d4 80%);
+    background-image: linear-gradient(to right, #5d59f3 0%, rgba(208, 91, 222, 0.5) 80%);
+    color: white;
+    padding: 10vh 10vw 5vh 10vw;
   }
+    .detail-content {
+      background: #eee;
+      color: #43494e;
+
+      div{
+        width: 80vw;
+        margin: 0 auto;
+        background: rgba(238, 238, 238, 0.2);
+      }
+      
+    }
+
 }
