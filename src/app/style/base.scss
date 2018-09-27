@@ -54,6 +54,16 @@ body {
         .bookmark-container{
             text-align: center;
             background: rgba(231, 234, 236, 0.5);
+
+            .bookmark-icon{
+                font-size: 1.5rem;
+                color: $purple;
+            }
+
+            h3{
+                display: inline;
+                color: $purple;
+            }
         }
 
         .recommend-container{

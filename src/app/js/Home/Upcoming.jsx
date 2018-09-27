@@ -4,6 +4,8 @@ import { Row } from 'reactstrap';
 import api from '../utils/api'
 import { withRouter } from 'react-router'
 import Bookmark from './Bookmark';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBookmark } from '@fortawesome/free-solid-svg-icons'
 
 
 class Upcoming extends Component {
@@ -65,7 +67,8 @@ class Upcoming extends Component {
         <Row className='mt-3'>
           {upcomingLi}
         </Row>
-        <div className='bookmark-container pt-5 pb-5'>
+        <div className='bookmark-container pt-3 pb-3'>
+          <FontAwesomeIcon className="bookmark-icon mr-3" icon={faBookmark} />
           <h3>Bookmark</h3>
           <Bookmark
             bookmark={this.state.bookmark}
