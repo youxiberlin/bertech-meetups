@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 
 const Navigation = props => {
     return (
+
         <div className='nav-wrapper'>
             <Link className="link nav-link" to="/">
                 <p>B</p>
@@ -30,9 +31,8 @@ const Navigation = props => {
                     </span>
                 )}
             </div>
-
-
         </div>
+
 
     )
 }

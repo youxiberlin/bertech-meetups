@@ -13,7 +13,10 @@ class UpcomingLi extends Component {
     this.state = {
       flipped: null,
       heart: null,
+      // savedHeart: false,
     }
+
+    // this.toggleOn = this.toggleOn.bind(this)
   }
 
   //card and heart toggling functions
@@ -29,15 +32,22 @@ class UpcomingLi extends Component {
   heartOver() {
     this.setState({ heart: true });
   }
-
+  // toggleOn() {
+  //   let toggle;
+  //   if (!this.state.savedHeart) {
+  //     toggle = true;
+  //   } else {
+  //     toggle = false;
+  //   }
+  //   this.setState({ savedHeart: toggle })
+  // }
 
 
   render() {
+    // console.log('upcomingLi: ', this.props.bookmark)
+    // console.log('heart is on', this.state.savedHeart)
     // console.log('upcomingLi bookmarked: ', this.props.bookmarked)
     // console.log('upcomingLi meetup id: ', this.props.id)
-
-    //identifying bookmarked cards
-    // card の id(meetup id) が bookmarkedに含まれているか
 
     // card and heart toggling
     let flipped = ''
@@ -49,6 +59,11 @@ class UpcomingLi extends Component {
     if (this.state.heart) {
       heartFlipped += ' heart-on'
     }
+
+    if (this.state.savedHeart) {
+      heartFlipped += ' heart-on'
+    }
+
 
     // to replace p and br tags with n
     const br2nl = function (str) {
@@ -77,15 +92,10 @@ class UpcomingLi extends Component {
                 onMouseOut={() => this.heartOut()}
                 onMouseOver={() => this.heartOver()}
                 onClick={() => this.props.saveCard(this.props.user, this.props.id)}
+              // onClick={() => this.toggleOn()}
               />
 
             </span>
-            {/* <span className='pl-3'>
-              <FontAwesomeIcon icon={faArrowCircleUp}
-                className='fa-arrow'
-                onClick={() => this.props.upvoteCard(this.props.user, this.props.id)}
-              />
-            </span> */}
           </CardBody>
         </Card>
       </Col>

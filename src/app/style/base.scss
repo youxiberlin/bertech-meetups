@@ -22,16 +22,24 @@ body {
         .map-container{
             background: #eee;
             width: 100vw;
-            height: 53vh;
-            // top: 20px;
-            // position: sticky;
+            height: 50vh;
+        }
+
+        .sticky {
+            position: fixed;
+            top: 0;
+            z-index: 10;
         }
 
         .upcoming-upper-container{
             background: rgba(231, 234, 236, 0.5);
             padding:  15px;
-
            }
+
+        .sticky-content {
+            padding-top: 55vh;
+            z-index: -5;
+        }
 
 
         .trending-container{

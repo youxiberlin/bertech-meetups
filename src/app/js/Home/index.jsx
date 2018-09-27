@@ -20,11 +20,33 @@ class Home extends Component {
     }
 
     this._updateLi = this._updateLi.bind(this)
+    this.handleScroll = this.handleScroll.bind(this);
   }
 
   componentDidMount() {
     this._createList()
     this.setState({ loading: false })
+    window.addEventListener('scroll', this.handleScroll);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleScroll);
+  }
+
+  handleScroll() {
+    window.onscroll = function () { mapFix() };
+    const mapel = document.getElementById('map')
+    const content = document.getElementById('list-content')
+    function mapFix() {
+      if (window.pageYOffset > 195) {
+        mapel.classList.add('sticky');
+        content.classList.add('sticky-content');
+      } else {
+        mapel.classList.remove('sticky');
+        content.classList.add('sticky-content');
+      }
+    }
+
   }
 
   render() {
@@ -73,13 +95,13 @@ class Home extends Component {
                   </div>
                 </div>
                 <div className='contents'>
-                  <div className="map-container">
+                  <div id='map' className="map-container">
                     <Map
                       upcoming={upcomingLi}
                       rsvp={rsvpLi}
                     />
                   </div>
-                  <div className='upcoming-upper-container'>
+                  <div id='list-content' className='upcoming-upper-container'>
                     <div><Upcoming meetups={upcomingLi} user={this.props.user} /></div>
                     <div className='text-center pt-4'>
                       <Button onClick={this._updateLi} color="secondary">More</Button>
@@ -154,6 +176,7 @@ class Home extends Component {
       return 0;
     }
   }
+
 
 }
 

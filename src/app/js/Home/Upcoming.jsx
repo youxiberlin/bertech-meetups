@@ -15,7 +15,6 @@ class Upcoming extends Component {
     }
 
     this._saveCard = this._saveCard.bind(this)
-    // this._upvoteCard = this._upvoteCard.bind(this)
   }
 
   componentDidMount() {
@@ -31,8 +30,19 @@ class Upcoming extends Component {
     console.log('@upcomign this.state.bookmark: ', this.state.bookmark)
     console.log('@upcomign this.props.meetups: ', this.props.meetups)
 
+    const bookmark = this.state.bookmark;
+    const meetups = this.props.meetups;
+    const bookmarkLi = [];
+    // const newArr = []
 
-    // if the meetup 
+    // for (let i = 0; i < meetups.length; i++) {
+    //   for (let j = 0; j < bookmark.length; j++) {
+    //     if (meetups[i].id == bookmark[j]) {
+    //       newArr.push(meetups[i])
+    //     }
+    //   }
+    // }
+
 
     const upcomingLi = this.props.meetups.map((el, i) =>
       <UpcomingLi
@@ -47,7 +57,8 @@ class Upcoming extends Component {
         user={this.props.user}
         saveCard={this._saveCard}
         upvoteCard={this._upvoteCard}
-        bookmarked={this.state.bookmark}
+      // bookmarked={this.state.bookmark}
+      // bookmark={bookmarked}
       />
     )
     return (
@@ -80,31 +91,7 @@ class Upcoming extends Component {
           })
         })
     }
-
-
   }
-
-  // _upvoteCard(user, meetup, voteNum) {
-  //   if (!user) {
-  //     console.log('please sign in')
-  //     return < Redirect to="/auth/sign-in" />
-  //   } else {
-  //     // console.log('@upcoming upvote()', this.state.upvote)
-  //     // console.log(user, meetup, voteNum)
-  //     const arr = [...this.state.upvote]
-  //     arr.push({
-  //       meetup: meetup,
-  //       vote: voteNum,
-  //     })
-
-  //     console.log('arr', arr)
-  //     this.setState({
-  //       upvote: arr
-  //     })
-
-  //   }
-  // }
-
 
 }
 

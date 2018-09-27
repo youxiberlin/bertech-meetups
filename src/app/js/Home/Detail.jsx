@@ -16,22 +16,23 @@ const Detail = props => {
   const newText = br2nl(text);
 
   return (
-    <div className="detail pt-5">
-      <div className='detail-content text-center'>
-        <h1 className='mb-3'>{matchingMeetup.name}</h1>
-        <h4>by {matchingMeetup.group.name}</h4>
-        <h4>Venue: {matchingMeetup.venue.name}</h4>
-        <p>at {matchingMeetup.local_time} on {matchingMeetup.local_date}</p>
-        <h5>{matchingMeetup.yes_rsvp_count} peeps are going.</h5>
+    <div>
+      <div className="detail pt-5">
+        <div className='detail-content text-center'>
+          <h1 className='mb-3'>{matchingMeetup.name}</h1>
+          <h4>by {matchingMeetup.group.name}</h4>
+          <h4>Venue: {matchingMeetup.venue.name}</h4>
+          <p>at {matchingMeetup.local_time} on {matchingMeetup.local_date}</p>
+          <h5>{matchingMeetup.yes_rsvp_count} peeps are going.</h5>
+        </div>
+        {/* <p className='mt-3'>{text} ....</p> */}
+        <p className='mt-4 mb-5'>{newText} ....</p>
+        <div className='text-center mb-5'>
+          <a href={`${matchingMeetup.link}`}>
+            <Button>More & Rsvp on meetup.com</Button>
+          </a>
+        </div>
       </div>
-      {/* <p className='mt-3'>{text} ....</p> */}
-      <p className='mt-4 mb-5'>{newText} ....</p>
-      <div className='text-center mb-5'>
-        <a href={`${matchingMeetup.link}`}>
-          <Button>More & Rsvp on meetup.com</Button>
-        </a>
-      </div>
-
     </div>
   );
 };
