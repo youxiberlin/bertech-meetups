@@ -51,6 +51,7 @@ class Home extends Component {
   }
 
   render() {
+
     if (this.state.loading) {
       return <div className='spinner'>loading.....</div>
     }
@@ -61,6 +62,8 @@ class Home extends Component {
     for (let i = 0; i < this.state.upcomingVisible; i++) {
       upcomingLi.push(sortedByDate[i]);
     }
+
+    console.log(sortedByDate)
 
     // 3create rsvp list
     const sortedByRsvp = this.state.meetups.sort(this._sortByRsvp)
