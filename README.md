@@ -2,8 +2,7 @@
 
 my final project at Ironhack Berlin 2018
 
-
-[<img src="./screenshot.png">]
+<img src="./screenshot.png">
 
 
 ## Deployment
