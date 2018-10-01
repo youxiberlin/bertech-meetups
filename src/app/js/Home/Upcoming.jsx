@@ -29,11 +29,7 @@ class Upcoming extends Component {
   }
 
   render() {
-    // console.log('@upcomign this.state.bookmark: ', this.state.bookmark)
-    // console.log('@upcomign this.props.meetups: ', this.props.meetups)
-
     const bookmark = this.state.bookmark;
-
 
     const upcomingLi = this.props.meetups.map((el, i) =>
       <UpcomingLi
