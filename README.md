@@ -1,5 +1,7 @@
 # Bertech Meetups
 
+Published on : [bertechmeetup.herokuapp.com](https://bertechmeetup.herokuapp.com/)
+
 Created this website as my final project at a coding bootcamp Ironhack in September 2018. 
 
 This is MERN stack application where users can find out upcoming tech-related meetups in Berlin.  
