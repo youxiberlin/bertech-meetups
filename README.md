@@ -11,6 +11,11 @@ HTML5, Sass, Javascript, React, Node.js, MongoDB, Express, Bootstrap, Meetup.com
 
 <img src="./screenshot.png">
 
+## Setup
+
+$ git clone 
+$ npm install
+$ npm run dev
 
 ## Deployment
 
