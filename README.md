@@ -13,9 +13,9 @@ HTML5, Sass, Javascript, React, Node.js, MongoDB, Express, Bootstrap, Meetup.com
 
 ## Setup
 
-$ git clone 
-$ npm install
-$ npm run dev
+$ git clone  
+$ npm install  
+$ npm run dev  
 
 ## Deployment
 
